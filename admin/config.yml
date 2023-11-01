@@ -665,293 +665,9 @@ collections:
             label: Text
             name: '-336201d5'
             widget: string
-          - hint: >-
-              Original text: customer service, or projecting sales., key:
-              -4de21add
-            label: Text
-            name: '-4de21add'
-            widget: string
-          - hint: 'Original text: our thing? , key: -18e0b7a5'
-            label: Text
-            name: '-18e0b7a5'
-            widget: string
-          - hint: 'Original text: ‍, key: 200d'
-            label: Text
-            name: 200d
-            widget: string
-          - hint: 'Original text: It''s Salesforce., key: 645a83a6'
-            label: Text
-            name: 645a83a6
-            widget: string
-          - hint: 'Original text: Salesforce for dealerships, key: -1c04323a'
-            label: Text
-            name: '-1c04323a'
-            widget: string
-          - hint: 'Original text: Salesforce Technology Roadmapped , key: 6e791bda'
-            label: Text
-            name: 6e791bda
-            widget: string
-          - hint: 'Original text: Destination Anywhere, key: 76af7a8d'
-            label: Text
-            name: 76af7a8d
-            widget: string
-          - hint: >-
-              Original text: Whether you're on a call, selling on the floor, or
-              writing an email, we set up Salesforce so you can see the big
-              picture and all the details. , key: -7ea99c10
-            label: Text
-            name: '-7ea99c10'
-            widget: text
-          - hint: 'Original text: Get a free consultation, key: 78a1d5d4'
-            label: Text
-            name: 78a1d5d4
-            widget: string
-          - hint: 'Original text: No items found., key: 3d503d2b'
-            label: Text
-            name: 3d503d2b
-            widget: string
-          - hint: 'Original text: Item Heading, key: -45d4420b'
-            label: Text
-            name: '-45d4420b'
-            widget: string
-          - hint: 'Original text: Subtitle, key: -76f64fc8'
-            label: Text
-            name: '-76f64fc8'
-            widget: string
-          - hint: >-
-              Original text: eros dolor interdum nulla, ut commodo diam libero
-              vitae erat. Aenean faucibus nibh et justo cursus id., key:
-              14daaa76
-            label: Text
-            name: 14daaa76
-            widget: text
-          - hint: 'Original text: One platform. , key: 4b6fb77f'
-            label: Text
-            name: 4b6fb77f
-            widget: string
-          - hint: 'Original text: Infinite possibilities. , key: bb28d17'
-            label: Text
-            name: bb28d17
-            widget: string
-          - hint: 'Original text: Make your technology work for you. , key: 6a063de4'
-            label: Text
-            name: 6a063de4
-            widget: string
-          - hint: >-
-              Original text: Dive into our Salesforce services for dealerships.,
-              key: 42e24bd0
-            label: Text
-            name: 42e24bd0
-            widget: string
-          - hint: 'Original text: Advisory Services, key: -3abb441b'
-            label: Text
-            name: '-3abb441b'
-            widget: string
-          - hint: >-
-              Original text: Create a customized technology roadmap with
-              tailored solutions to drive results., key: -5529abe3
-            label: Text
-            name: '-5529abe3'
-            widget: string
-          - hint: 'Original text: customization, key: 6196a7d3'
-            label: Text
-            name: 6196a7d3
-            widget: string
-          - hint: >-
-              Original text: Salesforce is ultra-flexible. We can adapt it to
-              your business needs., key: -3318bebf
-            label: Text
-            name: '-3318bebf'
-            widget: string
-          - hint: 'Original text: Integrations, key: 626d993f'
-            label: Text
-            name: 626d993f
-            widget: string
-          - hint: >-
-              Original text: Connect your DMS and other tools to Salesforce for
-              a clear line of sight into your business., key: 4fa12e31
-            label: Text
-            name: 4fa12e31
-            widget: text
-          - hint: 'Original text: managed services, key: -5da7fc41'
-            label: Text
-            name: '-5da7fc41'
-            widget: string
-          - hint: >-
-              Original text: From small fixes to ongoing support, our team is
-              here for you., key: 721924a
-            label: Text
-            name: 721924a
-            widget: string
-          - hint: 'Original text: implementation, key: 6455abb2'
-            label: Text
-            name: 6455abb2
-            widget: string
-          - hint: >-
-              Original text: Drive results with Salesforce set up just right for
-              you., key: -4af98b22
-            label: Text
-            name: '-4af98b22'
-            widget: string
-          - hint: 'Original text: optimization, key: -41876e93'
-            label: Text
-            name: '-41876e93'
-            widget: string
-          - hint: >-
-              Original text: Maximize your technology investment and outperform
-              your competitors., key: -7974cfbe
-            label: Text
-            name: '-7974cfbe'
-            widget: string
-          - hint: 'Original text: Get Started, key: -364d0a89'
-            label: Text
-            name: '-364d0a89'
-            widget: string
-          - hint: 'Original text: Our cloud expertise, key: 1f2da0f2'
-            label: Text
-            name: 1f2da0f2
-            widget: string
-          - hint: >-
-              Original text: With over a decade of automotive experience, we’ve
-              helped dealerships modernize the way they run. , key: -7eea3c63
-            label: Text
-            name: '-7eea3c63'
-            widget: text
-          - hint: 'Original text: AUTOMOTIVE CLOUD, key: -182686d6'
-            label: Text
-            name: '-182686d6'
-            widget: string
-          - hint: 'Original text: SALES CLOUD, key: -4e1e161f'
-            label: Text
-            name: '-4e1e161f'
-            widget: string
-          - hint: 'Original text: SERVICE CLOUD, key: 1d3948ca'
-            label: Text
-            name: 1d3948ca
-            widget: string
-          - hint: 'Original text: MARKETING CLOUD, key: 2578b77b'
-            label: Text
-            name: 2578b77b
-            widget: string
-          - hint: 'Original text: EXPERIENCE CLOUD, key: 2b8c07df'
-            label: Text
-            name: 2b8c07df
-            widget: string
-          - hint: 'Original text: Salesforce features for dealerships, key: 75f32805'
-            label: Text
-            name: 75f32805
-            widget: string
-          - hint: 'Original text: Marketing, key: 3fc9ea06'
-            label: Text
-            name: 3fc9ea06
-            widget: string
-          - hint: 'Original text: Optimized, key: -1aacd6f9'
-            label: Text
-            name: '-1aacd6f9'
-            widget: string
-          - hint: 'Original text: Process, key: 50c5b64f'
-            label: Text
-            name: 50c5b64f
-            widget: string
-          - hint: 'Original text: Sales Analytics, key: -2202fece'
-            label: Text
-            name: '-2202fece'
-            widget: string
-          - hint: 'Original text: 360 Customer View, key: 67cdb0f4'
-            label: Text
-            name: 67cdb0f4
-            widget: string
-          - hint: 'Original text: Account Management, key: 278eb056'
-            label: Text
-            name: 278eb056
-            widget: string
-          - hint: 'Original text: Email integration, key: 53672330'
-            label: Text
-            name: '53672330'
-            widget: string
-          - hint: 'Original text: Lead Management, key: -2d332c79'
-            label: Text
-            name: '-2d332c79'
-            widget: string
-          - hint: 'Original text: Automation, key: -74aa0ec9'
-            label: Text
-            name: '-74aa0ec9'
-            widget: string
-          - hint: 'Original text: Alerts, key: 750c8eb7'
-            label: Text
-            name: 750c8eb7
-            widget: string
-          - hint: 'Original text: Reports & Dashboards, key: 6885e99a'
-            label: Text
-            name: 6885e99a
-            widget: string
-          - hint: 'Original text: Inventory management, key: 787fb9a7'
-            label: Text
-            name: 787fb9a7
-            widget: string
-          - hint: 'Original text: Data Insights & Dashboard, key: 25c14ceb'
-            label: Text
-            name: 25c14ceb
-            widget: string
-          - hint: 'Original text: Lead Scoping Tasks, key: -4fa22d25'
-            label: Text
-            name: '-4fa22d25'
-            widget: string
-          - hint: 'Original text: who we work with, key: 3402aec5'
-            label: Text
-            name: 3402aec5
-            widget: string
-          - hint: 'Original text: What our customers say, key: 2f47b190'
-            label: Text
-            name: 2f47b190
-            widget: string
-          - hint: >-
-              Original text: Our engagement with SaltClick has been instrumental
-              in our growth., key: -5ad4744d
-            label: Text
-            name: '-5ad4744d'
-            widget: string
-          - hint: >-
-              Original text: The value created by their work has been immense.,
-              key: -756f29fe
-            label: Text
-            name: '-756f29fe'
-            widget: string
-          - hint: >-
-              Original text: I have nothing but positive things to say about our
-              collaboration., key: -4346719d
-            label: Text
-            name: '-4346719d'
-            widget: string
-          - hint: >-
-              Original text: — Parker Spendlove CTO at Flex Fleet Rental, key:
-              395a913f
-            label: Text
-            name: 395a913f
-            widget: string
-          - hint: 'Original text: Industry, key: b6ea5fe'
-            label: Text
-            name: b6ea5fe
-            widget: string
-          - hint: 'Original text: Pages, key: 494ffa4'
-            label: Text
-            name: 494ffa4
-            widget: string
           - hint: 'Original text: About Us, key: 645efc51'
             label: Text
             name: 645efc51
-            widget: string
-          - hint: 'Original text: Privacy Policy, key: -3fbde6f6'
-            label: Text
-            name: '-3fbde6f6'
-            widget: string
-          - hint: 'Original text: contact, key: 38b72420'
-            label: Text
-            name: 38b72420
-            widget: string
-          - hint: 'Original text: 801-997-6226, key: -4b57fbf6'
-            label: Text
-            name: '-4b57fbf6'
             widget: string
           - hint: >-
               Original text: In October 2022, SaltClick merged with EMZ Cloud,
@@ -1102,6 +818,10 @@ collections:
             label: Text
             name: '-36872396'
             widget: string
+          - hint: 'Original text: No items found., key: 3d503d2b'
+            label: Text
+            name: 3d503d2b
+            widget: string
           - hint: >-
               Original text: All the Salesforce expertise you need., key:
               -1343a7cb
@@ -1117,6 +837,26 @@ collections:
             label: Text
             name: '-14caf208'
             widget: text
+          - hint: 'Original text: Industry, key: b6ea5fe'
+            label: Text
+            name: b6ea5fe
+            widget: string
+          - hint: 'Original text: Pages, key: 494ffa4'
+            label: Text
+            name: 494ffa4
+            widget: string
+          - hint: 'Original text: Privacy Policy, key: -3fbde6f6'
+            label: Text
+            name: '-3fbde6f6'
+            widget: string
+          - hint: 'Original text: contact, key: 38b72420'
+            label: Text
+            name: 38b72420
+            widget: string
+          - hint: 'Original text: 801-997-6226, key: -4b57fbf6'
+            label: Text
+            name: '-4b57fbf6'
+            widget: string
           - hint: 'Original text: Access Denied, key: -2624ce29'
             label: Text
             name: '-2624ce29'
@@ -1160,6 +900,10 @@ collections:
             label: Text
             name: 6c6e852e
             widget: text
+          - hint: 'Original text: Get a free consultation, key: 78a1d5d4'
+            label: Text
+            name: 78a1d5d4
+            widget: string
           - hint: >-
               Original text: Compete and thrive in a digital landscape, key:
               -292179e3
@@ -1178,9 +922,25 @@ collections:
             label: Text
             name: '-5961410'
             widget: string
+          - hint: 'Original text: Marketing, key: 3fc9ea06'
+            label: Text
+            name: 3fc9ea06
+            widget: string
+          - hint: 'Original text: Integrations, key: 626d993f'
+            label: Text
+            name: 626d993f
+            widget: string
+          - hint: 'Original text: Sales Analytics, key: -2202fece'
+            label: Text
+            name: '-2202fece'
+            widget: string
           - hint: 'Original text: Forecasting, key: -3a351019'
             label: Text
             name: '-3a351019'
+            widget: string
+          - hint: 'Original text: Account Management, key: 278eb056'
+            label: Text
+            name: 278eb056
             widget: string
           - hint: "Original text: Quotes &\_Contracts, key: -b401382"
             label: Text
@@ -1236,6 +996,10 @@ collections:
           - hint: 'Original text: Unlock new ways to grow, key: -1707be68'
             label: Text
             name: '-1707be68'
+            widget: string
+          - hint: 'Original text: Inventory management, key: 787fb9a7'
+            label: Text
+            name: 787fb9a7
             widget: string
           - hint: >-
               Original text: Track available cars by model, color, fuel type,
@@ -1717,6 +1481,10 @@ collections:
             label: Text
             name: 778e09c7
             widget: text
+          - hint: 'Original text: Lead Management, key: -2d332c79'
+            label: Text
+            name: '-2d332c79'
+            widget: string
           - hint: >-
               Original text: Prioritize, track, and nurture leads in one place.
               Find the best potential customers and take good care of them at
@@ -1819,6 +1587,10 @@ collections:
             label: Text
             name: '-6cd43b3d'
             widget: string
+          - hint: 'Original text: Automation, key: -74aa0ec9'
+            label: Text
+            name: '-74aa0ec9'
+            widget: string
           - hint: 'Original text: DMS, key: 108ea'
             label: Text
             name: 108ea
@@ -1918,23 +1690,23 @@ collections:
             label: Text
             name: 685cd7e4
             widget: text
-          - hint: 'Original text: inquiry, key: 749289c7'
-            label: Text
-            name: 749289c7
-            widget: string
           - hint: >-
-              Original text: PLEASE INCLUDE ME IN MARKETING UPDATES, key:
-              6bea400f
+              Original text: customer service, or projecting sales., key:
+              -4de21add
             label: Text
-            name: 6bea400f
+            name: '-4de21add'
             widget: string
-          - hint: 'Original text: PRIVACY POLICY, key: 4d62acea'
+          - hint: 'Original text: our thing? , key: -18e0b7a5'
             label: Text
-            name: 4d62acea
+            name: '-18e0b7a5'
             widget: string
-          - hint: 'Original text: SUBMIT, key: -6d90cbe8'
+          - hint: 'Original text: ‍, key: 200d'
             label: Text
-            name: '-6d90cbe8'
+            name: 200d
+            widget: string
+          - hint: 'Original text: It''s Salesforce., key: 645a83a6'
+            label: Text
+            name: 645a83a6
             widget: string
           - hint: >-
               Original text: See everything. Work as one from anywhere., key:
@@ -1972,6 +1744,10 @@ collections:
             label: Text
             name: '-733a9c2'
             widget: string
+          - hint: 'Original text: customization, key: 6196a7d3'
+            label: Text
+            name: 6196a7d3
+            widget: string
           - hint: >-
               Original text: Reduce manual processes and enhance your tech
               stack., key: -7c18cd3f
@@ -1984,11 +1760,19 @@ collections:
             label: Text
             name: '-39d3813f'
             widget: string
+          - hint: 'Original text: managed services, key: -5da7fc41'
+            label: Text
+            name: '-5da7fc41'
+            widget: string
           - hint: >-
               Original text: Get ongoing support and training for your teams.,
               key: 69db88b1
             label: Text
             name: 69db88b1
+            widget: string
+          - hint: 'Original text: implementation, key: 6455abb2'
+            label: Text
+            name: 6455abb2
             widget: string
           - hint: >-
               Original text: Make Salesforce just right for your unique business
@@ -1996,15 +1780,51 @@ collections:
             label: Text
             name: 3170e56f
             widget: string
+          - hint: 'Original text: optimization, key: -41876e93'
+            label: Text
+            name: '-41876e93'
+            widget: string
           - hint: >-
               Original text: Customize a package for your budget, pace, and
               business., key: -3ca6297b
             label: Text
             name: '-3ca6297b'
             widget: string
+          - hint: 'Original text: Get Started, key: -364d0a89'
+            label: Text
+            name: '-364d0a89'
+            widget: string
           - hint: 'Original text: How We Work, key: 5ca34d33'
             label: Text
             name: 5ca34d33
+            widget: string
+          - hint: 'Original text: Optimized, key: -1aacd6f9'
+            label: Text
+            name: '-1aacd6f9'
+            widget: string
+          - hint: 'Original text: Process, key: 50c5b64f'
+            label: Text
+            name: 50c5b64f
+            widget: string
+          - hint: 'Original text: 360 Customer View, key: 67cdb0f4'
+            label: Text
+            name: 67cdb0f4
+            widget: string
+          - hint: 'Original text: Data Insights & Dashboard, key: 25c14ceb'
+            label: Text
+            name: 25c14ceb
+            widget: string
+          - hint: 'Original text: Lead Scoping Tasks, key: -4fa22d25'
+            label: Text
+            name: '-4fa22d25'
+            widget: string
+          - hint: 'Original text: Alerts, key: 750c8eb7'
+            label: Text
+            name: 750c8eb7
+            widget: string
+          - hint: 'Original text: Reports & Dashboards, key: 6885e99a'
+            label: Text
+            name: 6885e99a
             widget: string
           - hint: 'Original text: who works with us, key: -26ca7748'
             label: Text
@@ -2013,6 +1833,48 @@ collections:
           - hint: 'Original text: What People are Saying, key: 5f369b58'
             label: Text
             name: 5f369b58
+            widget: string
+          - hint: >-
+              Original text: Our engagement with SaltClick has been instrumental
+              in our growth., key: -5ad4744d
+            label: Text
+            name: '-5ad4744d'
+            widget: string
+          - hint: >-
+              Original text: The value created by their work has been immense.,
+              key: -756f29fe
+            label: Text
+            name: '-756f29fe'
+            widget: string
+          - hint: >-
+              Original text: I have nothing but positive things to say about our
+              collaboration., key: -4346719d
+            label: Text
+            name: '-4346719d'
+            widget: string
+          - hint: >-
+              Original text: — Parker Spendlove CTO at Flex Fleet Rental, key:
+              395a913f
+            label: Text
+            name: 395a913f
+            widget: string
+          - hint: 'Original text: inquiry, key: 749289c7'
+            label: Text
+            name: 749289c7
+            widget: string
+          - hint: >-
+              Original text: PLEASE INCLUDE ME IN MARKETING UPDATES, key:
+              6bea400f
+            label: Text
+            name: 6bea400f
+            widget: string
+          - hint: 'Original text: PRIVACY POLICY, key: 4d62acea'
+            label: Text
+            name: 4d62acea
+            widget: string
+          - hint: 'Original text: SUBMIT, key: -6d90cbe8'
+            label: Text
+            name: '-6d90cbe8'
             widget: string
           - hint: >-
               Original text: Grow your dealership with industry-specific
@@ -2333,45 +2195,6 @@ collections:
             label: Text
             name: '-6fcca7c7'
             widget: string
-          - hint: 'Original text: Customer success, key: 5429e1e1'
-            label: Text
-            name: 5429e1e1
-            widget: string
-          - hint: >-
-              Original text: Flex Fleet Rental is a commercial truck rental
-              company that wanted to gain full visibility into their business,
-              inventory, and customers to drive sales and improve driver safety.
-              , key: 2bb69dd1
-            label: Text
-            name: 2bb69dd1
-            widget: text
-          - hint: 'Original text: Inventory management , key: -688884a7'
-            label: Text
-            name: '-688884a7'
-            widget: string
-          - hint: 'Original text: reduced costs , key: -6c3ae2c4'
-            label: Text
-            name: '-6c3ae2c4'
-            widget: string
-          - hint: >-
-              Original text: A single view of customers across sales and
-              service., key: -625ec17b
-            label: Text
-            name: '-625ec17b'
-            widget: string
-          - hint: >-
-              Original text: Seamless insights into sales, marketing, and sales
-              performance with easy-to-read reports., key: -43731b1d
-            label: Text
-            name: '-43731b1d'
-            widget: string
-          - hint: >-
-              Original text: Enhanced communication and customer insights create
-              a smoother, more personalized car-buying experience., key:
-              -4dc26c30
-            label: Text
-            name: '-4dc26c30'
-            widget: text
           - hint: >-
               Original text: "We expect this upward growth trajectory to
               continue, and that's precisely why we focused on setting the right
@@ -2870,6 +2693,144 @@ collections:
             label: Text
             name: 13527f80
             widget: text
+          - hint: 'Original text: Salesforce for dealerships, key: -1c04323a'
+            label: Text
+            name: '-1c04323a'
+            widget: string
+          - hint: 'Original text: Salesforce technology roadmapped. , key: -62edcac8'
+            label: Text
+            name: '-62edcac8'
+            widget: string
+          - hint: 'Original text: Destination anywhere., key: -1832489f'
+            label: Text
+            name: '-1832489f'
+            widget: string
+          - hint: >-
+              Original text: Whether you're on a call, selling on the floor, or
+              writing an email, we set up Salesforce so you can see the big
+              picture and all the details. , key: -7ea99c10
+            label: Text
+            name: '-7ea99c10'
+            widget: text
+          - hint: 'Original text: Item Heading, key: -45d4420b'
+            label: Text
+            name: '-45d4420b'
+            widget: string
+          - hint: 'Original text: Subtitle, key: -76f64fc8'
+            label: Text
+            name: '-76f64fc8'
+            widget: string
+          - hint: >-
+              Original text: eros dolor interdum nulla, ut commodo diam libero
+              vitae erat. Aenean faucibus nibh et justo cursus id., key:
+              14daaa76
+            label: Text
+            name: 14daaa76
+            widget: text
+          - hint: 'Original text: One platform. , key: 4b6fb77f'
+            label: Text
+            name: 4b6fb77f
+            widget: string
+          - hint: 'Original text: Infinite possibilities. , key: bb28d17'
+            label: Text
+            name: bb28d17
+            widget: string
+          - hint: 'Original text: Make your technology work for you. , key: 6a063de4'
+            label: Text
+            name: 6a063de4
+            widget: string
+          - hint: >-
+              Original text: Dive into our Salesforce services for dealerships.,
+              key: 42e24bd0
+            label: Text
+            name: 42e24bd0
+            widget: string
+          - hint: 'Original text: Advisory Services, key: -3abb441b'
+            label: Text
+            name: '-3abb441b'
+            widget: string
+          - hint: >-
+              Original text: Create a customized technology roadmap with
+              tailored solutions to drive results., key: -5529abe3
+            label: Text
+            name: '-5529abe3'
+            widget: string
+          - hint: >-
+              Original text: Salesforce is ultra-flexible. We can adapt it to
+              your business needs., key: -3318bebf
+            label: Text
+            name: '-3318bebf'
+            widget: string
+          - hint: >-
+              Original text: Connect your DMS and other tools to Salesforce for
+              a clear line of sight into your business., key: 4fa12e31
+            label: Text
+            name: 4fa12e31
+            widget: text
+          - hint: >-
+              Original text: From small fixes to ongoing support, our team is
+              here for you., key: 721924a
+            label: Text
+            name: 721924a
+            widget: string
+          - hint: >-
+              Original text: Drive results with Salesforce set up just right for
+              you., key: -4af98b22
+            label: Text
+            name: '-4af98b22'
+            widget: string
+          - hint: >-
+              Original text: Maximize your technology investment and outperform
+              your competitors., key: -7974cfbe
+            label: Text
+            name: '-7974cfbe'
+            widget: string
+          - hint: 'Original text: Our cloud expertise, key: 1f2da0f2'
+            label: Text
+            name: 1f2da0f2
+            widget: string
+          - hint: >-
+              Original text: With over a decade of automotive experience, we’ve
+              helped dealerships modernize the way they run. , key: -7eea3c63
+            label: Text
+            name: '-7eea3c63'
+            widget: text
+          - hint: 'Original text: AUTOMOTIVE CLOUD, key: -182686d6'
+            label: Text
+            name: '-182686d6'
+            widget: string
+          - hint: 'Original text: SALES CLOUD, key: -4e1e161f'
+            label: Text
+            name: '-4e1e161f'
+            widget: string
+          - hint: 'Original text: SERVICE CLOUD, key: 1d3948ca'
+            label: Text
+            name: 1d3948ca
+            widget: string
+          - hint: 'Original text: MARKETING CLOUD, key: 2578b77b'
+            label: Text
+            name: 2578b77b
+            widget: string
+          - hint: 'Original text: EXPERIENCE CLOUD, key: 2b8c07df'
+            label: Text
+            name: 2b8c07df
+            widget: string
+          - hint: 'Original text: Salesforce features for dealerships, key: 75f32805'
+            label: Text
+            name: 75f32805
+            widget: string
+          - hint: 'Original text: Email integration, key: 53672330'
+            label: Text
+            name: '53672330'
+            widget: string
+          - hint: 'Original text: who we work with, key: 3402aec5'
+            label: Text
+            name: 3402aec5
+            widget: string
+          - hint: 'Original text: What our customers say, key: 2f47b190'
+            label: Text
+            name: 2f47b190
+            widget: string
       - label: Links
         name: links
         file: cms/_data/links.json
@@ -2914,21 +2875,6 @@ collections:
             label: Link
             name: 63434a7b
             widget: string
-          - hint: 'Original link: /privacy-policy/, key: -2f934417'
-            label: Link
-            name: '-2f934417'
-            widget: string
-          - hint: 'Original link: https://www.instagram.com/saltclick/, key: 5b992d4d'
-            label: Link
-            name: 5b992d4d
-            widget: string
-          - hint: >-
-              Original link:
-              https://www.youtube.com/channel/UCS6qKlRlt6Uw68TEwPQ6PKg, key:
-              5a86a747
-            label: Link
-            name: 5a86a747
-            widget: string
           - hint: >-
               Original link: mailto:yervand.yezeryan@saltclick.com, key:
               24383bbf
@@ -2954,6 +2900,21 @@ collections:
           - hint: 'Original link: mailto:curtis.willis@saltclick.com, key: -32cf67b7'
             label: Link
             name: '-32cf67b7'
+            widget: string
+          - hint: 'Original link: /privacy-policy/, key: -2f934417'
+            label: Link
+            name: '-2f934417'
+            widget: string
+          - hint: 'Original link: https://www.instagram.com/saltclick/, key: 5b992d4d'
+            label: Link
+            name: 5b992d4d
+            widget: string
+          - hint: >-
+              Original link:
+              https://www.youtube.com/channel/UCS6qKlRlt6Uw68TEwPQ6PKg, key:
+              5a86a747
+            label: Link
+            name: 5a86a747
             widget: string
           - hint: 'Original link: /sign-up/, key: 4b0d5213'
             label: Link
@@ -3067,4 +3028,473 @@ collections:
                 label: Image Alt
                 widget: string
                 required: false
+          - label: Image
+            name: '-55bc0b13'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 615dbc2b
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-237bb54a'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 46cb0ce8
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: b958f07
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-3fd32438'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-630e2fd3'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 5456fdf
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 40883b76
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-35258eb9'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 4abef31c
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-730b86d3'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-98493e0'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-47d810f4'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 64e47fd4
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 2771e30c
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 6db85a15
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 1d4de71a
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-5a063379'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-448cb39a'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 83efcd4
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 7aacf477
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-79fdf47a'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-20982256'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-3865d562'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-748f96af'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 7d2ee92a
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 24155fd4
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 670e875f
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-44da13b8'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-3204a17a'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 4e15a295
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 4d08e93
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-5dd1bbd2'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-1612e165'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 4d7bb6b7
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+local_backend: true
 publish_mode: editorial_workflow
