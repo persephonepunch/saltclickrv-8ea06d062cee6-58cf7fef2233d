@@ -23,6 +23,10 @@
     "url": "/assets/images/carbluefront.jpg",
     "alt": ""
   },
+  "4abef31c": {
+    "url": "https://d3e54v103j8qbb.cloudfront.net/static/utility-lock.ae54711958.svg",
+    "alt": ""
+  },
   "-55bc0b13": {
     "url": "/assets/images/saltclickpeak.svg",
     "alt": "SaltClick Automotive\n"
@@ -63,18 +67,6 @@
     "url": "/assets/images/instagramwhite.svg",
     "alt": ""
   },
-  "4abef31c": {
-    "url": "https://d3e54v103j8qbb.cloudfront.net/static/utility-lock.ae54711958.svg",
-    "alt": ""
-  },
-  "6db85a15": {
-    "url": "/assets/images/logo-six.png",
-    "alt": ""
-  },
-  "2771e30c": {
-    "url": "/assets/images/mattioli.png",
-    "alt": "Mattioli"
-  },
   "-730b86d3": {
     "url": "/assets/images/blackcarhero.jpeg",
     "alt": "SaltClick Automotive"
@@ -90,6 +82,14 @@
   "64e47fd4": {
     "url": "/assets/images/map.jpeg",
     "alt": "SaltClick Automotive"
+  },
+  "2771e30c": {
+    "url": "/assets/images/mattioli.png",
+    "alt": "Mattioli"
+  },
+  "6db85a15": {
+    "url": "/assets/images/logo-six.png",
+    "alt": ""
   },
   "1d4de71a": {
     "url": "/assets/images/circles3-01.svg",

@@ -4781,7 +4781,9 @@ a {
   }
 
   .button {
-    margin-bottom: 55px;
+    margin-bottom: 0;
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
 
   .navbar22_link-wrapper {
@@ -5448,11 +5450,23 @@ a {
   .hometoptitle {
     max-width: 11rem;
   }
+
+  .lettalkwrap {
+    height: 90px;
+    align-items: center;
+    display: flex;
+    position: relative;
+  }
 }
 
 @media screen and (max-width: 767px) {
   .navbar22_component {
     min-height: 4rem;
+  }
+
+  .button {
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
 
   .navbar22_menu-wrapper {
