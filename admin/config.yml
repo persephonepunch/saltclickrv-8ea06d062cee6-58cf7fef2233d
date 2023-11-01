@@ -1,0 +1,3070 @@
+backend:
+  name: git-gateway
+  accept_roles:
+    - admin
+    - editor
+  branch: master
+media_folder: theme/assets/images
+public_folder: /assets/images
+collections:
+  - name: pages
+    label: Pages
+    identifier_field: title
+    extension: md
+    create: false
+    delete: false
+    slug: '{{slug}}'
+    editor:
+      preview: false
+    folder: cms/pages
+    fields:
+      - label: Title
+        name: title
+        widget: string
+      - label: Publish Date
+        name: date
+        widget: datetime
+      - label: Layout
+        widget: hidden
+        name: layout
+        default: '{{slug}}.html'
+      - &ref_0
+        label: Seo
+        name: seo
+        widget: object
+        collapsed: true
+        fields:
+          - label: Title
+            name: title
+            widget: string
+            required: false
+          - label: Description
+            name: description
+            widget: string
+            required: false
+          - label: No index
+            name: noindex
+            widget: boolean
+            default: false
+            required: false
+          - label: Open Graph Title
+            name: og:title
+            widget: string
+            required: false
+          - label: Open Graph Image
+            name: og:image
+            widget: image
+            required: false
+            media_library:
+              config:
+                multiple: false
+          - label: Twitter Title
+            name: twitter:title
+            widget: string
+            default: summary
+            required: false
+          - label: Twitter Card
+            name: twitter:card
+            widget: string
+            default: summary
+            required: false
+          - label: Twitter Site
+            name: twitter:site
+            widget: string
+            required: false
+          - label: Twitter Creator
+            name: twitter:creator
+            widget: string
+            required: false
+          - label: Additional HTML tags
+            name: additional_tags
+            widget: text
+            required: false
+  - name: privacy
+    label: Privacies
+    folder: cms/privacy
+    create: true
+    identifier_field: name
+    extension: md
+    slug: '{{slug}}'
+    fields:
+      - label: Content
+        name: body
+        widget: markdown
+        required: false
+      - hint: ''
+        name: title
+        label: Name
+        widget: string
+        required: true
+      - hint: ''
+        name: created-on
+        label: Created On
+        widget: datetime
+        required: false
+      - hint: ''
+        name: updated-on
+        label: Updated On
+        widget: datetime
+        required: false
+      - hint: ''
+        name: published-on
+        label: Published On
+        widget: datetime
+        required: false
+      - label: Tags
+        widget: hidden
+        name: tags
+        default: privacy
+      - label: Layout
+        widget: hidden
+        name: layout
+        default: '[privacy].html'
+      - label: Publish Date
+        name: date
+        widget: datetime
+      - *ref_0
+  - name: tags
+    label: Tags
+    folder: cms/tags
+    create: true
+    identifier_field: name
+    extension: md
+    slug: '{{slug}}'
+    fields:
+      - hint: ''
+        name: title
+        label: Name
+        widget: string
+        required: true
+      - hint: ''
+        name: created-on
+        label: Created On
+        widget: datetime
+        required: false
+      - hint: ''
+        name: updated-on
+        label: Updated On
+        widget: datetime
+        required: false
+      - hint: ''
+        name: published-on
+        label: Published On
+        widget: datetime
+        required: false
+      - label: Tags
+        widget: hidden
+        name: tags
+        default: tags
+      - label: Layout
+        widget: hidden
+        name: layout
+        default: '[tags].html'
+      - label: Publish Date
+        name: date
+        widget: datetime
+      - *ref_0
+  - name: case_studies
+    label: Case Studies
+    folder: cms/case-studies
+    create: true
+    identifier_field: name
+    extension: md
+    slug: '{{slug}}'
+    fields:
+      - hint: ''
+        name: title
+        label: Name
+        widget: string
+        required: true
+      - hint: ''
+        name: created-on
+        label: Created On
+        widget: datetime
+        required: false
+      - hint: ''
+        name: updated-on
+        label: Updated On
+        widget: datetime
+        required: false
+      - hint: ''
+        name: published-on
+        label: Published On
+        widget: datetime
+        required: false
+      - label: Challenge Return
+        name: body
+        widget: markdown
+        required: false
+      - hint: ''
+        name: f_subhead
+        label: Subhead
+        widget: string
+        required: false
+      - hint: ''
+        name: f_content
+        label: Content
+        widget: string
+        required: false
+      - hint: ''
+        name: f_tags
+        label: Tags
+        widget: relation
+        required: false
+        collection: tags
+        value_field: cms/tags/{{slug}}.md
+        search_fields:
+          - slug
+          - name
+        display_fields:
+          - title
+        multiple: true
+      - hint: ''
+        name: f_tag-text
+        label: Tag Text
+        widget: string
+        required: false
+      - hint: ''
+        name: f_solution-return
+        label: Solution Return
+        widget: markdown
+        required: false
+      - hint: ''
+        name: f_hero-image
+        label: Hero Image
+        widget: object
+        required: false
+        fields:
+          - hint: ''
+            name: url
+            label: Image
+            widget: image
+            required: false
+            allow_multiple: false
+          - hint: Image Alt
+            name: alt
+            label: alt
+            widget: string
+            required: false
+      - label: Tags
+        widget: hidden
+        name: tags
+        default: case-studies
+      - label: Layout
+        widget: hidden
+        name: layout
+        default: '[case-studies].html'
+      - label: Publish Date
+        name: date
+        widget: datetime
+      - *ref_0
+  - name: team
+    label: Teams
+    folder: cms/team
+    create: true
+    identifier_field: name
+    extension: md
+    slug: '{{slug}}'
+    fields:
+      - hint: ''
+        name: title
+        label: Name
+        widget: string
+        required: true
+      - hint: ''
+        name: created-on
+        label: Created On
+        widget: datetime
+        required: false
+      - hint: ''
+        name: updated-on
+        label: Updated On
+        widget: datetime
+        required: false
+      - hint: ''
+        name: published-on
+        label: Published On
+        widget: datetime
+        required: false
+      - hint: ''
+        name: f_photo
+        label: Photo
+        widget: object
+        required: false
+        fields:
+          - hint: ''
+            name: url
+            label: Image
+            widget: image
+            required: false
+            allow_multiple: false
+          - hint: Image Alt
+            name: alt
+            label: alt
+            widget: string
+            required: false
+      - hint: ''
+        name: f_social-1
+        label: Social 1
+        widget: string
+        required: false
+      - hint: ''
+        name: f_social-2
+        label: Social 2
+        widget: string
+        required: false
+      - hint: ''
+        name: f_social-3
+        label: Social 3
+        widget: string
+        required: false
+      - hint: ''
+        name: f_bio
+        label: Bio
+        widget: string
+        required: false
+      - label: Tags
+        widget: hidden
+        name: tags
+        default: team
+      - label: Layout
+        widget: hidden
+        name: layout
+        default: '[team].html'
+      - label: Publish Date
+        name: date
+        widget: datetime
+      - *ref_0
+  - name: logos
+    label: Logos
+    folder: cms/logos
+    create: true
+    identifier_field: name
+    extension: md
+    slug: '{{slug}}'
+    fields:
+      - hint: ''
+        name: title
+        label: Name
+        widget: string
+        required: true
+      - hint: ''
+        name: created-on
+        label: Created On
+        widget: datetime
+        required: false
+      - hint: ''
+        name: updated-on
+        label: Updated On
+        widget: datetime
+        required: false
+      - hint: ''
+        name: published-on
+        label: Published On
+        widget: datetime
+        required: false
+      - hint: ''
+        name: f_logo-image
+        label: Logo Image
+        widget: object
+        required: false
+        fields:
+          - hint: ''
+            name: url
+            label: Image
+            widget: image
+            required: false
+            allow_multiple: false
+          - hint: Image Alt
+            name: alt
+            label: alt
+            widget: string
+            required: false
+      - label: Tags
+        widget: hidden
+        name: tags
+        default: logos
+      - label: Layout
+        widget: hidden
+        name: layout
+        default: '[logos].html'
+      - label: Publish Date
+        name: date
+        widget: datetime
+      - *ref_0
+  - name: service
+    label: Services
+    folder: cms/service
+    create: true
+    identifier_field: name
+    extension: md
+    slug: '{{slug}}'
+    fields:
+      - hint: ''
+        name: title
+        label: Name
+        widget: string
+        required: true
+      - hint: ''
+        name: created-on
+        label: Created On
+        widget: datetime
+        required: false
+      - hint: ''
+        name: updated-on
+        label: Updated On
+        widget: datetime
+        required: false
+      - hint: ''
+        name: published-on
+        label: Published On
+        widget: datetime
+        required: false
+      - hint: ''
+        name: f_cloud-description
+        label: Cloud Description
+        widget: string
+        required: false
+      - hint: ''
+        name: f_hero-image
+        label: Hero Image
+        widget: object
+        required: false
+        fields:
+          - hint: ''
+            name: url
+            label: Image
+            widget: image
+            required: false
+            allow_multiple: false
+          - hint: Image Alt
+            name: alt
+            label: alt
+            widget: string
+            required: false
+      - hint: ''
+        name: f_urllink
+        label: urllink
+        widget: string
+        required: false
+      - label: Tags
+        widget: hidden
+        name: tags
+        default: service
+      - label: Layout
+        widget: hidden
+        name: layout
+        default: '[service].html'
+      - label: Publish Date
+        name: date
+        widget: datetime
+      - *ref_0
+  - label: Theme Settings
+    name: settings
+    identifier_field: title
+    extension: json
+    create: false
+    delete: false
+    slug: '{{slug}}'
+    editor:
+      preview: false
+    files:
+      - label: General
+        name: site
+        file: cms/_data/settings/site.json
+        fields:
+          - label: Title
+            name: title
+            widget: hidden
+            default: General
+          - hint: Full domain url (needed for a correct sitemap file)
+            name: domain
+            label: Domain
+            widget: string
+            required: false
+          - name: favicon
+            label: Favicon
+            widget: image
+            allow_multiple: false
+            required: false
+          - name: apple_touch_icon
+            label: Apple Touch Icon
+            widget: image
+            allow_multiple: false
+            required: false
+          - name: header_additional_content
+            label: Additional Content Header
+            hint: Content here will be placed before </head> tag
+            widget: text
+            required: false
+          - name: footer_additional_content
+            label: Additional Content Footer
+            hint: Content here will be placed before </body> tag
+            widget: text
+            required: false
+          - name: images_optimization
+            label: Images Optimization
+            widget: object
+            collapsed: false
+            fields:
+              - label: Image Formats
+                name: formats
+                widget: select
+                multiple: true
+                options:
+                  - label: Avif
+                    value: avif
+                  - label: Webp
+                    value: webp
+              - label: Image Dimensions
+                name: dimensions
+                widget: select
+                multiple: true
+                options:
+                  - label: '500'
+                    value: 500
+                  - label: '800'
+                    value: 800
+                  - label: '1080'
+                    value: 1080
+                  - label: '1600'
+                    value: 1600
+                  - label: '2000'
+                    value: 2000
+                  - label: '2600'
+                    value: 2600
+      - label: Colors
+        name: colors
+        file: cms/_data/colors.json
+        fields:
+          - label: Title
+            name: title
+            widget: hidden
+            default: Colors
+      - label: Texts
+        name: texts
+        file: cms/_data/texts.json
+        fields:
+          - label: Title
+            name: title
+            widget: hidden
+            default: Texts
+          - hint: 'Original text: saltclick , key: 6550936e'
+            label: Text
+            name: 6550936e
+            widget: string
+          - hint: 'Original text: Home, key: 2268ff'
+            label: Text
+            name: 2268ff
+            widget: string
+          - hint: 'Original text: About, key: 3c2336d'
+            label: Text
+            name: 3c2336d
+            widget: string
+          - hint: 'Original text: Contact Us, key: 7f2746de'
+            label: Text
+            name: 7f2746de
+            widget: string
+          - hint: 'Original text: Industries, key: -15a310e4'
+            label: Text
+            name: '-15a310e4'
+            widget: string
+          - hint: 'Original text: RV, key: a44'
+            label: Text
+            name: a44
+            widget: string
+          - hint: 'Original text: Automotive, key: -73e4c4eb'
+            label: Text
+            name: '-73e4c4eb'
+            widget: string
+          - hint: 'Original text: Marine, key: -770e861e'
+            label: Text
+            name: '-770e861e'
+            widget: string
+          - hint: 'Original text: Let''s talk, key: -13e0cf3b'
+            label: Text
+            name: '-13e0cf3b'
+            widget: string
+          - hint: 'Original text: let''s talk, key: 754d54a5'
+            label: Text
+            name: 754d54a5
+            widget: string
+          - hint: "Original text: Learn more about how we can help your business succeed with Salesforce.\_, key: -1fb58695"
+            label: Text
+            name: '-1fb58695'
+            widget: string
+          - hint: 'Original text: FIRST NAME, key: 119ca21b'
+            label: Text
+            name: 119ca21b
+            widget: string
+          - hint: 'Original text: LAST NAME, key: 1c6105d5'
+            label: Text
+            name: 1c6105d5
+            widget: string
+          - hint: 'Original text: Email, key: 3ff5b7c'
+            label: Text
+            name: 3ff5b7c
+            widget: string
+          - hint: 'Original text: Company, key: -64202ba3'
+            label: Text
+            name: '-64202ba3'
+            widget: string
+          - hint: 'Original text: Include in Marketing Updates, key: 47e632ed'
+            label: Text
+            name: 47e632ed
+            widget: string
+          - hint: >-
+              Original text: Thank you! Your submission has been received!, key:
+              5a0ea5a1
+            label: Text
+            name: 5a0ea5a1
+            widget: string
+          - hint: >-
+              Original text: Oops! Something went wrong while submitting the
+              form., key: -7c112e99
+            label: Text
+            name: '-7c112e99'
+            widget: string
+          - hint: 'Original text: 5965 S 900 ESuite 275, key: -57778d4c'
+            label: Text
+            name: '-57778d4c'
+            widget: string
+          - hint: 'Original text: Murray, UT 84121, key: -680e9d59'
+            label: Text
+            name: '-680e9d59'
+            widget: string
+          - hint: 'Original text: 801 997-6226, key: 2d2e60fd'
+            label: Text
+            name: 2d2e60fd
+            widget: string
+          - hint: 'Original text: info@saltclick.com, key: -4dbc8f8d'
+            label: Text
+            name: '-4dbc8f8d'
+            widget: string
+          - hint: 'Original text: First Name, key: 69b3163b'
+            label: Text
+            name: 69b3163b
+            widget: string
+          - hint: 'Original text: Last Name, key: -1416662b'
+            label: Text
+            name: '-1416662b'
+            widget: string
+          - hint: 'Original text: Phone, key: 4984d4e'
+            label: Text
+            name: 4984d4e
+            widget: string
+          - hint: 'Original text: Email Address, key: -2b7010d0'
+            label: Text
+            name: '-2b7010d0'
+            widget: string
+          - hint: 'Original text: Message, key: -63dc6819'
+            label: Text
+            name: '-63dc6819'
+            widget: string
+          - hint: 'Original text: Stay in Touch, key: -336201d5'
+            label: Text
+            name: '-336201d5'
+            widget: string
+          - hint: >-
+              Original text: customer service, or projecting sales., key:
+              -4de21add
+            label: Text
+            name: '-4de21add'
+            widget: string
+          - hint: 'Original text: our thing? , key: -18e0b7a5'
+            label: Text
+            name: '-18e0b7a5'
+            widget: string
+          - hint: 'Original text: ‍, key: 200d'
+            label: Text
+            name: 200d
+            widget: string
+          - hint: 'Original text: It''s Salesforce., key: 645a83a6'
+            label: Text
+            name: 645a83a6
+            widget: string
+          - hint: 'Original text: Salesforce for dealerships, key: -1c04323a'
+            label: Text
+            name: '-1c04323a'
+            widget: string
+          - hint: 'Original text: Salesforce Technology Roadmapped , key: 6e791bda'
+            label: Text
+            name: 6e791bda
+            widget: string
+          - hint: 'Original text: Destination Anywhere, key: 76af7a8d'
+            label: Text
+            name: 76af7a8d
+            widget: string
+          - hint: >-
+              Original text: Whether you're on a call, selling on the floor, or
+              writing an email, we set up Salesforce so you can see the big
+              picture and all the details. , key: -7ea99c10
+            label: Text
+            name: '-7ea99c10'
+            widget: text
+          - hint: 'Original text: Get a free consultation, key: 78a1d5d4'
+            label: Text
+            name: 78a1d5d4
+            widget: string
+          - hint: 'Original text: No items found., key: 3d503d2b'
+            label: Text
+            name: 3d503d2b
+            widget: string
+          - hint: 'Original text: Item Heading, key: -45d4420b'
+            label: Text
+            name: '-45d4420b'
+            widget: string
+          - hint: 'Original text: Subtitle, key: -76f64fc8'
+            label: Text
+            name: '-76f64fc8'
+            widget: string
+          - hint: >-
+              Original text: eros dolor interdum nulla, ut commodo diam libero
+              vitae erat. Aenean faucibus nibh et justo cursus id., key:
+              14daaa76
+            label: Text
+            name: 14daaa76
+            widget: text
+          - hint: 'Original text: One platform. , key: 4b6fb77f'
+            label: Text
+            name: 4b6fb77f
+            widget: string
+          - hint: 'Original text: Infinite possibilities. , key: bb28d17'
+            label: Text
+            name: bb28d17
+            widget: string
+          - hint: 'Original text: Make your technology work for you. , key: 6a063de4'
+            label: Text
+            name: 6a063de4
+            widget: string
+          - hint: >-
+              Original text: Dive into our Salesforce services for dealerships.,
+              key: 42e24bd0
+            label: Text
+            name: 42e24bd0
+            widget: string
+          - hint: 'Original text: Advisory Services, key: -3abb441b'
+            label: Text
+            name: '-3abb441b'
+            widget: string
+          - hint: >-
+              Original text: Create a customized technology roadmap with
+              tailored solutions to drive results., key: -5529abe3
+            label: Text
+            name: '-5529abe3'
+            widget: string
+          - hint: 'Original text: customization, key: 6196a7d3'
+            label: Text
+            name: 6196a7d3
+            widget: string
+          - hint: >-
+              Original text: Salesforce is ultra-flexible. We can adapt it to
+              your business needs., key: -3318bebf
+            label: Text
+            name: '-3318bebf'
+            widget: string
+          - hint: 'Original text: Integrations, key: 626d993f'
+            label: Text
+            name: 626d993f
+            widget: string
+          - hint: >-
+              Original text: Connect your DMS and other tools to Salesforce for
+              a clear line of sight into your business., key: 4fa12e31
+            label: Text
+            name: 4fa12e31
+            widget: text
+          - hint: 'Original text: managed services, key: -5da7fc41'
+            label: Text
+            name: '-5da7fc41'
+            widget: string
+          - hint: >-
+              Original text: From small fixes to ongoing support, our team is
+              here for you., key: 721924a
+            label: Text
+            name: 721924a
+            widget: string
+          - hint: 'Original text: implementation, key: 6455abb2'
+            label: Text
+            name: 6455abb2
+            widget: string
+          - hint: >-
+              Original text: Drive results with Salesforce set up just right for
+              you., key: -4af98b22
+            label: Text
+            name: '-4af98b22'
+            widget: string
+          - hint: 'Original text: optimization, key: -41876e93'
+            label: Text
+            name: '-41876e93'
+            widget: string
+          - hint: >-
+              Original text: Maximize your technology investment and outperform
+              your competitors., key: -7974cfbe
+            label: Text
+            name: '-7974cfbe'
+            widget: string
+          - hint: 'Original text: Get Started, key: -364d0a89'
+            label: Text
+            name: '-364d0a89'
+            widget: string
+          - hint: 'Original text: Our cloud expertise, key: 1f2da0f2'
+            label: Text
+            name: 1f2da0f2
+            widget: string
+          - hint: >-
+              Original text: With over a decade of automotive experience, we’ve
+              helped dealerships modernize the way they run. , key: -7eea3c63
+            label: Text
+            name: '-7eea3c63'
+            widget: text
+          - hint: 'Original text: AUTOMOTIVE CLOUD, key: -182686d6'
+            label: Text
+            name: '-182686d6'
+            widget: string
+          - hint: 'Original text: SALES CLOUD, key: -4e1e161f'
+            label: Text
+            name: '-4e1e161f'
+            widget: string
+          - hint: 'Original text: SERVICE CLOUD, key: 1d3948ca'
+            label: Text
+            name: 1d3948ca
+            widget: string
+          - hint: 'Original text: MARKETING CLOUD, key: 2578b77b'
+            label: Text
+            name: 2578b77b
+            widget: string
+          - hint: 'Original text: EXPERIENCE CLOUD, key: 2b8c07df'
+            label: Text
+            name: 2b8c07df
+            widget: string
+          - hint: 'Original text: Salesforce features for dealerships, key: 75f32805'
+            label: Text
+            name: 75f32805
+            widget: string
+          - hint: 'Original text: Marketing, key: 3fc9ea06'
+            label: Text
+            name: 3fc9ea06
+            widget: string
+          - hint: 'Original text: Optimized, key: -1aacd6f9'
+            label: Text
+            name: '-1aacd6f9'
+            widget: string
+          - hint: 'Original text: Process, key: 50c5b64f'
+            label: Text
+            name: 50c5b64f
+            widget: string
+          - hint: 'Original text: Sales Analytics, key: -2202fece'
+            label: Text
+            name: '-2202fece'
+            widget: string
+          - hint: 'Original text: 360 Customer View, key: 67cdb0f4'
+            label: Text
+            name: 67cdb0f4
+            widget: string
+          - hint: 'Original text: Account Management, key: 278eb056'
+            label: Text
+            name: 278eb056
+            widget: string
+          - hint: 'Original text: Email integration, key: 53672330'
+            label: Text
+            name: '53672330'
+            widget: string
+          - hint: 'Original text: Lead Management, key: -2d332c79'
+            label: Text
+            name: '-2d332c79'
+            widget: string
+          - hint: 'Original text: Automation, key: -74aa0ec9'
+            label: Text
+            name: '-74aa0ec9'
+            widget: string
+          - hint: 'Original text: Alerts, key: 750c8eb7'
+            label: Text
+            name: 750c8eb7
+            widget: string
+          - hint: 'Original text: Reports & Dashboards, key: 6885e99a'
+            label: Text
+            name: 6885e99a
+            widget: string
+          - hint: 'Original text: Inventory management, key: 787fb9a7'
+            label: Text
+            name: 787fb9a7
+            widget: string
+          - hint: 'Original text: Data Insights & Dashboard, key: 25c14ceb'
+            label: Text
+            name: 25c14ceb
+            widget: string
+          - hint: 'Original text: Lead Scoping Tasks, key: -4fa22d25'
+            label: Text
+            name: '-4fa22d25'
+            widget: string
+          - hint: 'Original text: who we work with, key: 3402aec5'
+            label: Text
+            name: 3402aec5
+            widget: string
+          - hint: 'Original text: What our customers say, key: 2f47b190'
+            label: Text
+            name: 2f47b190
+            widget: string
+          - hint: >-
+              Original text: Our engagement with SaltClick has been instrumental
+              in our growth., key: -5ad4744d
+            label: Text
+            name: '-5ad4744d'
+            widget: string
+          - hint: >-
+              Original text: The value created by their work has been immense.,
+              key: -756f29fe
+            label: Text
+            name: '-756f29fe'
+            widget: string
+          - hint: >-
+              Original text: I have nothing but positive things to say about our
+              collaboration., key: -4346719d
+            label: Text
+            name: '-4346719d'
+            widget: string
+          - hint: >-
+              Original text: — Parker Spendlove CTO at Flex Fleet Rental, key:
+              395a913f
+            label: Text
+            name: 395a913f
+            widget: string
+          - hint: 'Original text: Industry, key: b6ea5fe'
+            label: Text
+            name: b6ea5fe
+            widget: string
+          - hint: 'Original text: Pages, key: 494ffa4'
+            label: Text
+            name: 494ffa4
+            widget: string
+          - hint: 'Original text: About Us, key: 645efc51'
+            label: Text
+            name: 645efc51
+            widget: string
+          - hint: 'Original text: Privacy Policy, key: -3fbde6f6'
+            label: Text
+            name: '-3fbde6f6'
+            widget: string
+          - hint: 'Original text: contact, key: 38b72420'
+            label: Text
+            name: 38b72420
+            widget: string
+          - hint: 'Original text: 801-997-6226, key: -4b57fbf6'
+            label: Text
+            name: '-4b57fbf6'
+            widget: string
+          - hint: >-
+              Original text: In October 2022, SaltClick merged with EMZ Cloud,
+              bringing together Automotive and Salesforce Industry expertise to
+              create a best-of-breed shared services delivery model., key:
+              -33471561
+            label: Text
+            name: '-33471561'
+            widget: text
+          - hint: >-
+              Original text: Now operating under one brand, SaltClick is
+              dedicated to helping companies get the most out of their
+              Salesforce investment. You could say we are “driven” to see our
+              partners succeed. , key: 33313c5e
+            label: Text
+            name: 33313c5e
+            widget: text
+          - hint: 'Original text: Fast. Trustworthy. Hands-On., key: -1c190001'
+            label: Text
+            name: '-1c190001'
+            widget: string
+          - hint: >-
+              Original text: In 2013, EMZ (now SaltClick) spotted a problem.
+              Small to midsize businesses were stuck with old systems and messy
+              paper records. , key: -5ca10fd2
+            label: Text
+            name: '-5ca10fd2'
+            widget: text
+          - hint: "Original text: These companies needed tech that fit the needs of modern digital consumers and the automotive sector. So, we stepped in. We partnered with a top US car dealership and saw how powerful Salesforce could be in reshaping their business. Since then, we've applied our learnings and perfected our processes to become the experts in turning dealerships into smooth, customer-driven businesses.\_, key: -4e55ddfa"
+            label: Text
+            name: '-4e55ddfa'
+            widget: text
+          - hint: "Original text: Recognizing our impact and innovation, Salesforce named us their 2022 Automotive Launch Cloud partner. That same year, wanting to scale and expand our services, we joined forces with SaltClick, an end-to-end Salesforce implementation and consulting firm. While we'll always be proud of our EMZ roots, now,\_ with more expertise under one roof, we can deliver even more value to our customers., key: acd9dba"
+            label: Text
+            name: acd9dba
+            widget: text
+          - hint: 'Original text: Get free consultation, key: 4d7e9553'
+            label: Text
+            name: 4d7e9553
+            widget: string
+          - hint: 'Original text: Customer Success, key: -489d863f'
+            label: Text
+            name: '-489d863f'
+            widget: string
+          - hint: 'Original text: Schedule a Consultation, key: 248f8891'
+            label: Text
+            name: 248f8891
+            widget: string
+          - hint: 'Original text: 2022, key: 1774fe'
+            label: Text
+            name: 1774fe
+            widget: string
+          - hint: 'Original text: Automotive Client Launch Partner, key: -1d864c9b'
+            label: Text
+            name: '-1d864c9b'
+            widget: string
+          - hint: 'Original text: 100+, key: 17005a'
+            label: Text
+            name: 17005a
+            widget: string
+          - hint: 'Original text: Certifications, key: 1d5c0f19'
+            label: Text
+            name: 1d5c0f19
+            widget: string
+          - hint: 'Original text: 4.99/5, key: 5b5efe80'
+            label: Text
+            name: 5b5efe80
+            widget: string
+          - hint: 'Original text: Customer Satisfaction, key: 4fc73d8e'
+            label: Text
+            name: 4fc73d8e
+            widget: string
+          - hint: 'Original text: 500+, key: 18d1d6'
+            label: Text
+            name: 18d1d6
+            widget: string
+          - hint: 'Original text: Projects Completed Successfully, key: -3708bc1e'
+            label: Text
+            name: '-3708bc1e'
+            widget: string
+          - hint: 'Original text: Our Team, key: 290af1'
+            label: Text
+            name: 290af1
+            widget: string
+          - hint: 'Original text: Yervand Yezeryan, key: 10547f24'
+            label: Text
+            name: 10547f24
+            widget: string
+          - hint: 'Original text: EVP, Manufacturing and Automotive, key: c733533'
+            label: Text
+            name: c733533
+            widget: string
+          - hint: 'Original text: yervand.yezeryan@saltclick.com, key: -de8d249'
+            label: Text
+            name: '-de8d249'
+            widget: string
+          - hint: 'Original text: Nick Petricca, key: 2d1758c8'
+            label: Text
+            name: 2d1758c8
+            widget: string
+          - hint: 'Original text: Salesforce Account Executive, key: -5a2b92ec'
+            label: Text
+            name: '-5a2b92ec'
+            widget: string
+          - hint: 'Original text: nick.petricca@saltclick.com, key: 3586fc9b'
+            label: Text
+            name: 3586fc9b
+            widget: string
+          - hint: 'Original text: Curtis Willis, key: -5ef5c782'
+            label: Text
+            name: '-5ef5c782'
+            widget: string
+          - hint: 'Original text: curtis.willis@saltclick.com, key: -5d5056af'
+            label: Text
+            name: '-5d5056af'
+            widget: string
+          - hint: 'Original text: get started, key: 310b5b7'
+            label: Text
+            name: 310b5b7
+            widget: string
+          - hint: 'Original text: Salesforce Implementation , key: -4d55ba13'
+            label: Text
+            name: '-4d55ba13'
+            widget: string
+          - hint: >-
+              Original text: Lorem ipsum dolor sit amet, consectetur adipiscing
+              elit. Suspendisse varius enim in eros elementum tristique. Duis
+              cursus, mi quis viverra ornare, eros dolor interdum nulla, ut
+              commodo diam libero vitae erat. Aenean faucibus nibh et justo
+              cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus
+              tristique posuere., key: -5286fc08
+            label: Text
+            name: '-5286fc08'
+            widget: text
+          - hint: 'Original text: Integration, key: -57a9e24c'
+            label: Text
+            name: '-57a9e24c'
+            widget: string
+          - hint: 'Original text: Packaged Solutions, key: 4b9bb958'
+            label: Text
+            name: 4b9bb958
+            widget: string
+          - hint: 'Original text: Managed Services, key: 73f6abff'
+            label: Text
+            name: 73f6abff
+            widget: string
+          - hint: 'Original text: Our Knowledge, key: -36872396'
+            label: Text
+            name: '-36872396'
+            widget: string
+          - hint: >-
+              Original text: All the Salesforce expertise you need., key:
+              -1343a7cb
+            label: Text
+            name: '-1343a7cb'
+            widget: string
+          - hint: >-
+              Original text: SaltClick experts are welcoming, chosen for our
+              knowledge and hands-on approach. Our collaboration lifts your
+              whole team up. We're Salesforce consulting, implementation, and
+              automotive cloud partners that pride ourselves on setting up
+              Salesforce just right for you., key: -14caf208
+            label: Text
+            name: '-14caf208'
+            widget: text
+          - hint: 'Original text: Access Denied, key: -2624ce29'
+            label: Text
+            name: '-2624ce29'
+            widget: string
+          - hint: >-
+              Original text: A site membership is required to view this page.
+              Please , key: 4617a544
+            label: Text
+            name: 4617a544
+            widget: string
+          - hint: 'Original text: Sign up, key: -204ff442'
+            label: Text
+            name: '-204ff442'
+            widget: string
+          - hint: 'Original text:  or , key: 103a7d'
+            label: Text
+            name: 103a7d
+            widget: string
+          - hint: 'Original text: Log in, key: -7804285f'
+            label: Text
+            name: '-7804285f'
+            widget: string
+          - hint: 'Original text: ., key: 2e'
+            label: Text
+            name: 2e
+            widget: string
+          - hint: 'Original text: Salesforce for car dealerships, key: -2b11a886'
+            label: Text
+            name: '-2b11a886'
+            widget: string
+          - hint: >-
+              Original text: Turn your team into a productivity powerhouse, key:
+              75e3fda3
+            label: Text
+            name: 75e3fda3
+            widget: string
+          - hint: >-
+              Original text: Bring your data, teams, and tools together. Get a
+              clear view of who's doing what and what needs to get done with
+              Salesforce., key: 6c6e852e
+            label: Text
+            name: 6c6e852e
+            widget: text
+          - hint: >-
+              Original text: Compete and thrive in a digital landscape, key:
+              -292179e3
+            label: Text
+            name: '-292179e3'
+            widget: string
+          - hint: >-
+              Original text: Don't start from scratch. Customize our proven
+              automotive solutions as much or little as you want. Get up and
+              running in weeks with a whole-picture view of your business. ,
+              key: 358cdfbe
+            label: Text
+            name: 358cdfbe
+            widget: text
+          - hint: 'Original text: Personalized, key: -5961410'
+            label: Text
+            name: '-5961410'
+            widget: string
+          - hint: 'Original text: Forecasting, key: -3a351019'
+            label: Text
+            name: '-3a351019'
+            widget: string
+          - hint: "Original text: Quotes &\_Contracts, key: -b401382"
+            label: Text
+            name: '-b401382'
+            widget: string
+          - hint: 'Original text: More sales. Happier customers. , key: 55c33791'
+            label: Text
+            name: 55c33791
+            widget: string
+          - hint: 'Original text: A clear view into your business, key: 3a8c5c36'
+            label: Text
+            name: 3a8c5c36
+            widget: string
+          - hint: 'Original text: Lead management, key: 5bfaf767'
+            label: Text
+            name: 5bfaf767
+            widget: string
+          - hint: >-
+              Original text: Capture leads from test drives, online inquiries,
+              walk-ins, and more. Assign leads to salespeople based on their
+              availability or specialization for an exceptional customer
+              experience., key: -1b2ac8e1
+            label: Text
+            name: '-1b2ac8e1'
+            widget: text
+          - hint: 'Original text: Dashboards and reports, key: -4e1735ab'
+            label: Text
+            name: '-4e1735ab'
+            widget: string
+          - hint: >-
+              Original text: Track sales, inventory levels, and customer
+              behaviors. Monitor performance across multiple car dealership
+              locations. Spot friction in buying journeys and take proactive
+              steps right in Salesforce. , key: 3f5a96ec
+            label: Text
+            name: 3f5a96ec
+            widget: text
+          - hint: 'Original text: Mobile access, key: 15c02282'
+            label: Text
+            name: 15c02282
+            widget: string
+          - hint: >-
+              Original text: Give your teams mobile tools for real-time updates,
+              notes, and seamless collaboration. Use Salesforce to access
+              account details anytime, anywhere. , key: -5fda9c12
+            label: Text
+            name: '-5fda9c12'
+            widget: text
+          - hint: "Original text: Simple. Agile.\_Central. , key: -55a17043"
+            label: Text
+            name: '-55a17043'
+            widget: string
+          - hint: 'Original text: Unlock new ways to grow, key: -1707be68'
+            label: Text
+            name: '-1707be68'
+            widget: string
+          - hint: >-
+              Original text: Track available cars by model, color, fuel type,
+              year, and more. View vehicle photos, details, and availability.
+              Manage trade-ins and respective values in one place when you
+              integrate with Salesforce. , key: -663777f9
+            label: Text
+            name: '-663777f9'
+            widget: text
+          - hint: 'Original text: Easy automation, key: 461a8bd5'
+            label: Text
+            name: 461a8bd5
+            widget: string
+          - hint: >-
+              Original text: No-code automation is built into Salesforce, so you
+              can focus on the work that matters and put the rest on autopilot.
+              Create rules and set triggers for almost any action., key:
+              -62727071
+            label: Text
+            name: '-62727071'
+            widget: text
+          - hint: "Original text: Salesforce integrates with dealer management systems (like CDK and Advent), service appointment scheduling, digital marketing and ad platforms, email, and more, packing\_\_real-time data from all your systems into one central place for unmatched visibility into your business and customers. , key: 580c0082"
+            label: Text
+            name: 580c0082
+            widget: text
+          - hint: 'Original text: Why Choose SaltClick?, key: 3e9396de'
+            label: Text
+            name: 3e9396de
+            widget: string
+          - hint: 'Original text: Schedule a consultation, key: 1ac43471'
+            label: Text
+            name: 1ac43471
+            widget: string
+          - hint: 'Original text: About Our Customer, key: -47f1cbbb'
+            label: Text
+            name: '-47f1cbbb'
+            widget: string
+          - hint: >-
+              Original text: Mattioli Automotive Group is a Ferrari dealership
+              group in Beverly Hills. Each location location operated like an
+              island. Sales were slipping and communication as chaotic. Getting
+              a single view of customers and their business was almost
+              impossible—until SaltClick implemented Salesforce., key: 50e20d2
+            label: Text
+            name: 50e20d2
+            widget: text
+          - hint: 'Original text: APPLICATION, key: -230866d0'
+            label: Text
+            name: '-230866d0'
+            widget: string
+          - hint: 'Original text: Car Dealerships, key: -2372db4e'
+            label: Text
+            name: '-2372db4e'
+            widget: string
+          - hint: 'Original text: Sales, key: 4bf58ec'
+            label: Text
+            name: 4bf58ec
+            widget: string
+          - hint: 'Original text: Analytics and Reporting, key: 172c67cb'
+            label: Text
+            name: 172c67cb
+            widget: string
+          - hint: 'Original text: Customer Experience, key: -2ca72114'
+            label: Text
+            name: '-2ca72114'
+            widget: string
+          - hint: 'Original text: Sales Cloud, key: 5c99f9e1'
+            label: Text
+            name: 5c99f9e1
+            widget: string
+          - hint: 'Original text: CDK, key: 1040a'
+            label: Text
+            name: 1040a
+            widget: string
+          - hint: 'Original text: Key Benefits, key: 66e1939d'
+            label: Text
+            name: 66e1939d
+            widget: string
+          - hint: 'Original text: Improved Insights and visibility, key: -63bcac54'
+            label: Text
+            name: '-63bcac54'
+            widget: string
+          - hint: 'Original text: 1., key: 61d'
+            label: Text
+            name: 61d
+            widget: string
+          - hint: >-
+              Original text: A single view of customers across sales and service
+              across dealer locations., key: 14bf2d0d
+            label: Text
+            name: 14bf2d0d
+            widget: string
+          - hint: 'Original text: 2., key: 63c'
+            label: Text
+            name: 63c
+            widget: string
+          - hint: >-
+              Original text: Quick snapshots into sales and marketing
+              performance with easy-to-read reports., key: -3e964e85
+            label: Text
+            name: '-3e964e85'
+            widget: string
+          - hint: 'Original text: 3., key: 65b'
+            label: Text
+            name: 65b
+            widget: string
+          - hint: >-
+              Original text: Better communication and deeper customer insights
+              for a smoother car-buying experience., key: -6e68badf
+            label: Text
+            name: '-6e68badf'
+            widget: string
+          - hint: >-
+              Original text: “SaltClick demonstrated exceptional
+              professionalism, expertise, and attention to detail. Our sales
+              team now enjoys a unified and streamlined system that enables them
+              to effectively manage leads, track customer interactions, and
+              close deals with greater efficiency.”, key: -c298d62
+            label: Text
+            name: '-c298d62'
+            widget: text
+          - hint: >-
+              Original text: - Gilberto Medici, COO of Mattioli Auto Group, key:
+              246c77ef
+            label: Text
+            name: 246c77ef
+            widget: string
+          - hint: >-
+              Original text: Salesforce expertise under one roof., key:
+              -7a6dfb18
+            label: Text
+            name: '-7a6dfb18'
+            widget: string
+          - hint: >-
+              Original text: Let us be your trusted trail guide throughout your
+              Salesforce journey., key: -3005b8fb
+            label: Text
+            name: '-3005b8fb'
+            widget: string
+          - hint: 'Original text: Studio, key: -6bc46a0a'
+            label: Text
+            name: '-6bc46a0a'
+            widget: string
+          - hint: 'Original text: Works, key: 4fe2b62'
+            label: Text
+            name: 4fe2b62
+            widget: string
+          - hint: 'Original text: Contact, key: -64104400'
+            label: Text
+            name: '-64104400'
+            widget: string
+          - hint: 'Original text: Purchase, key: 6bc36921'
+            label: Text
+            name: 6bc36921
+            widget: string
+          - hint: >-
+              Original text: A better car dealership with salesforce, key:
+              -3321e5f5
+            label: Text
+            name: '-3321e5f5'
+            widget: string
+          - hint: >-
+              Original text: You always put your customers first. But to give
+              them the best experience, you need the right tools and ideas. At
+              SaltClick, we set up Salesforce just right for your car
+              dealership. So you can connect your systems, really get to know
+              your customers, and get everyone on the same page., key: 400cb1ad
+            label: Text
+            name: 400cb1ad
+            widget: text
+          - hint: >-
+              Original text: Mattioli Automotive Group (MAG) is a Ferrari
+              dealership in Beverly Hills that is synonymous with the luxury car
+              buying experience. But beneath the gleaming exteriors, there was a
+              problem. Each of Mattiloli’s locations operated like an isolated
+              island. Sales were slipping and communication was chaotic. Beyond
+              that, gaining a single view of customers or creating a performance
+              report was complex and time consuming., key: 60d9a3c1
+            label: Text
+            name: 60d9a3c1
+            widget: text
+          - hint: 'Original text: application, key: 5ca40550'
+            label: Text
+            name: 5ca40550
+            widget: string
+          - hint: 'Original text: Car Dealership, key: 492dd7e1'
+            label: Text
+            name: 492dd7e1
+            widget: string
+          - hint: 'Original text: integrations, key: 58a2451f'
+            label: Text
+            name: 58a2451f
+            widget: string
+          - hint: 'Original text: key benefits, key: 593bdb5d'
+            label: Text
+            name: 593bdb5d
+            widget: string
+          - hint: 'Original text: a single view, key: -14d4c9c2'
+            label: Text
+            name: '-14d4c9c2'
+            widget: string
+          - hint: >-
+              Original text: A single view of customers across sales and
+              service. , key: 1686923b
+            label: Text
+            name: 1686923b
+            widget: string
+          - hint: 'Original text: seamless, key: 34b54097'
+            label: Text
+            name: 34b54097
+            widget: string
+          - hint: >-
+              Original text: Seamless insights into sales, marketing, and sales
+              performance with easy-to-read reports. , key: -2af04863
+            label: Text
+            name: '-2af04863'
+            widget: string
+          - hint: 'Original text: enhanced communication, key: 427050ac'
+            label: Text
+            name: 427050ac
+            widget: string
+          - hint: >-
+              Original text: Enhanced communication and customer insights create
+              a smoother, more personalized car-buying experience. , key:
+              -6a8b19b0
+            label: Text
+            name: '-6a8b19b0'
+            widget: text
+          - hint: 'Original text: AUTOMOTIVE, key: 32334af5'
+            label: Text
+            name: 32334af5
+            widget: string
+          - hint: 'Original text: services, key: 5235105e'
+            label: Text
+            name: 5235105e
+            widget: string
+          - hint: 'Original text: schedule a consultation, key: 60f75c91'
+            label: Text
+            name: 60f75c91
+            widget: string
+          - hint: 'Original text: SALESFORCE SPECIALISTS, key: -25dd2bff'
+            label: Text
+            name: '-25dd2bff'
+            widget: string
+          - hint: "Original text: HOW\_WE\_, key: 6ca38b22"
+            label: Text
+            name: 6ca38b22
+            widget: string
+          - hint: "Original text: SERVICE\_YOU , key: -5b11a4d4"
+            label: Text
+            name: '-5b11a4d4'
+            widget: string
+          - hint: >-
+              Original text: We provide you with all necessary marketing and
+              branding services to make sure you deliver a message that
+              converts., key: 3de2d82f
+            label: Text
+            name: 3de2d82f
+            widget: text
+          - hint: 'Original text: View full menu, key: 156304b5'
+            label: Text
+            name: 156304b5
+            widget: string
+          - hint: 'Original text: 5.0, key: ccb7'
+            label: Text
+            name: ccb7
+            widget: string
+          - hint: 'Original text: Salesforce Automotive Cloud, key: -63db7e35'
+            label: Text
+            name: '-63db7e35'
+            widget: string
+          - hint: >-
+              Original text: Drive unified customer experiences with Salesforce
+              Automotive Cloud, a business software solution tailored
+              specifically to your industry., key: -61f11975
+            label: Text
+            name: '-61f11975'
+            widget: text
+          - hint: 'Original text: 35+, key: c609'
+            label: Text
+            name: c609
+            widget: string
+          - hint: 'Original text: A Clear View of Everything, key: -477c098d'
+            label: Text
+            name: '-477c098d'
+            widget: string
+          - hint: >-
+              Original text: No more handwritten notes or sprawling
+              spreadsheets. Get full insight into your customers, vehicles, and
+              fleets and take action from one connected system., key: -6b706736
+            label: Text
+            name: '-6b706736'
+            widget: text
+          - hint: 'Original text: $0, key: 48c'
+            label: Text
+            name: 48c
+            widget: string
+          - hint: 'Original text: .00, key: b2ae'
+            label: Text
+            name: b2ae
+            widget: string
+          - hint: 'Original text: Modern Retailing, key: 317b3c3e'
+            label: Text
+            name: 317b3c3e
+            widget: string
+          - hint: >-
+              Original text: Simplify how you build dealer and customer
+              experiences with clicks, not code. Effortlessly extend your look
+              and feel to digital., key: -79305268
+            label: Text
+            name: '-79305268'
+            widget: text
+          - hint: 'Original text: Easy Automation, key: -4313980b'
+            label: Text
+            name: '-4313980b'
+            widget: string
+          - hint: "Original text: Integrate all your business tools and automate slow, routine tasks with Salesforce Flows.\_, key: 6edb73f0"
+            label: Text
+            name: 6edb73f0
+            widget: string
+          - hint: 'Original text: Personalized Marketing, key: 1a9fcdd6'
+            label: Text
+            name: 1a9fcdd6
+            widget: string
+          - hint: >-
+              Original text: Sell, service, and delight customers at every step
+              of their journeys with personalized messaging, sent at the right
+              time, on the right channels., key: 747b7b43
+            label: Text
+            name: 747b7b43
+            widget: text
+          - hint: 'Original text: Vehicle Management, key: 387e5f7'
+            label: Text
+            name: 387e5f7
+            widget: string
+          - hint: >-
+              Original text: Quickly access critical information, such as
+              vehicle details, warranties, and delivery reports. Don’t waste
+              time searching for details and stay compliant with industry
+              standards., key: -5b2e514f
+            label: Text
+            name: '-5b2e514f'
+            widget: text
+          - hint: >-
+              Original text: Track and manage opportunities at different stages
+              in your sales pipeline, assign values to potential deals, and set
+              close dates to project revenue., key: -661442cc
+            label: Text
+            name: '-661442cc'
+            widget: text
+          - hint: 'Original text: Household Management, key: 1d03e364'
+            label: Text
+            name: 1d03e364
+            widget: string
+          - hint: >-
+              Original text: See a household's complete driver and vehicle
+              history. Use those insights to personalize support, offers, and
+              your sales tactics., key: 791a110c
+            label: Text
+            name: 791a110c
+            widget: text
+          - hint: 'Original text: Automotive Lead Management, key: -40c2ff84'
+            label: Text
+            name: '-40c2ff84'
+            widget: string
+          - hint: "Original text: Send high-value leads to the dealership each customer likes best so they feel valued and catered to, helping you sell more efficiently.\_, key: 1f800393"
+            label: Text
+            name: 1f800393
+            widget: text
+          - hint: 'Original text: 9k, key: 752'
+            label: Text
+            name: '752'
+            widget: string
+          - hint: 'Original text: Partner Performance Management, key: -2835bf15'
+            label: Text
+            name: '-2835bf15'
+            widget: string
+          - hint: >-
+              Original text: Work together on site visits and incentives. Tap
+              into performance data to improve your sales strategy, boost
+              profitability, and achieve success as a team., key: -70b38fd4
+            label: Text
+            name: '-70b38fd4'
+            widget: text
+          - hint: >-
+              Original text: Our experts help you work smarter and grow your
+              business smoothly. Sales Cloud, Marketing Cloud, Experience Cloud,
+              Automotive Cloud, or other tools, our team knows how to set them
+              up for maximum impact and ROI., key: -3e67f5ac
+            label: Text
+            name: '-3e67f5ac'
+            widget: text
+          - hint: 'Original text: learn more, key: 367f27b1'
+            label: Text
+            name: 367f27b1
+            widget: string
+          - hint: 'Original text: talk about us, key: -2e1136fb'
+            label: Text
+            name: '-2e1136fb'
+            widget: string
+          - hint: >-
+              Original text: From the initial consultation to the final
+              implementation and support, SaltClick demonstrated exceptional
+              professionalism, expertise, and attention to detail. , key:
+              -72375fe4
+            label: Text
+            name: '-72375fe4'
+            widget: text
+          - hint: >-
+              Original text: They efficiently migrated our data, streamlined our
+              sales workflows, and provided comprehensive training to our team,
+              ensuring a smooth transition and minimal disruption to our
+              operations. , key: 2c4d9d8c
+            label: Text
+            name: 2c4d9d8c
+            widget: text
+          - hint: >-
+              Original text: The impact of their Salesforce implementation has
+              been a game-changer. Our sales team now enjoys a unified and
+              streamlined system that enables them to effectively manage leads,
+              track customer interactions, and close deals with greater
+              efficiency., key: 58c29c0e
+            label: Text
+            name: 58c29c0e
+            widget: text
+          - hint: >-
+              Original text: The improved reporting and analytics capabilities
+              have empowered our management team to make data-driven decisions
+              and gain valuable insights into our business performance, key:
+              -591aa652
+            label: Text
+            name: '-591aa652'
+            widget: text
+          - hint: "Original text: —\_Gilberto Medici \_COO of Mattioli Auto Group, key: -805af1e"
+            label: Text
+            name: '-805af1e'
+            widget: string
+          - hint: 'Original text: quick launch, key: -3fbbaeba'
+            label: Text
+            name: '-3fbbaeba'
+            widget: string
+          - hint: >-
+              Original text: Get Salesforce up and running fast, with our crawl,
+              walk, run approach so you benefit from your investment right
+              away., key: -75e1a29d
+            label: Text
+            name: '-75e1a29d'
+            widget: text
+          - hint: 'Original text: friendly help, key: 53038996'
+            label: Text
+            name: '53038996'
+            widget: string
+          - hint: >-
+              Original text: We listen to your needs and goals, working closely
+              with you to make sure that Salesforce is working just right for
+              your business., key: -32b45967
+            label: Text
+            name: '-32b45967'
+            widget: text
+          - hint: 'Original text: expert setup, key: -54dc8af9'
+            label: Text
+            name: '-54dc8af9'
+            widget: string
+          - hint: >-
+              Original text: With 10+ years of experience, we know the ins and
+              outs of your industry and set up Salesforce to best support your
+              people and operations., key: 415133eb
+            label: Text
+            name: 415133eb
+            widget: text
+          - hint: 'Original text: RV Management, key: -5c3bb041'
+            label: Text
+            name: '-5c3bb041'
+            widget: string
+          - hint: >-
+              Original text: See RV sales in one, connected platform. Explore
+              sales trends in easy-to-read dashboards. Get insights and adjust
+              your strategies in real time., key: 778e09c7
+            label: Text
+            name: 778e09c7
+            widget: text
+          - hint: >-
+              Original text: Prioritize, track, and nurture leads in one place.
+              Find the best potential customers and take good care of them at
+              every step of their journey., key: -3d2cc886
+            label: Text
+            name: '-3d2cc886'
+            widget: text
+          - hint: 'Original text: Quoting and Proposals, key: 2b1d68d1'
+            label: Text
+            name: 2b1d68d1
+            widget: string
+          - hint: "Original text: Simplify creating and managing quotes and proposals with a product catalog, customizable templates, dynamic pricing, and electronic signature integration.\_, key: 7dffd404"
+            label: Text
+            name: 7dffd404
+            widget: text
+          - hint: >-
+              Original text: Organize customers into groups, send personalized
+              emails and messages, and even predict what they might like with
+              AI., key: 42d1d1c6
+            label: Text
+            name: 42d1d1c6
+            widget: text
+          - hint: 'Original text: Workflow Automation, key: -6eedc3e8'
+            label: Text
+            name: '-6eedc3e8'
+            widget: string
+          - hint: >-
+              Original text: Speed up and streamline sales. Automate complex
+              workflows, assign leads to the right reps, trigger emails, and
+              maintain accurate data., key: -5df52aaa
+            label: Text
+            name: '-5df52aaa'
+            widget: text
+          - hint: 'Original text: Customer Alerts, key: -3a52c6e7'
+            label: Text
+            name: '-3a52c6e7'
+            widget: string
+          - hint: >-
+              Original text: Keep sales teams informed and proactive. Trigger
+              alerts based on specific conditions like changes in record status,
+              lead assignments, or milestone achievements., key: -54736837
+            label: Text
+            name: '-54736837'
+            widget: text
+          - hint: 'Original text: Warranty Management, key: 36ac3de7'
+            label: Text
+            name: 36ac3de7
+            widget: string
+          - hint: >-
+              Original text: Manage warranties in the office or on the go. Track
+              warranty dates, empower customer service reps, send alerts, and
+              give customers self-help tools., key: 25db1c97
+            label: Text
+            name: 25db1c97
+            widget: text
+          - hint: "Original text: Connect your other tools with Salesforce, including dealer management systems (DMS), payment processing, and online vehicle sales, parts, and service booking software.\_, key: 79ebe192"
+            label: Text
+            name: 79ebe192
+            widget: text
+          - hint: 'Original text: Customer Support, key: -47e04673'
+            label: Text
+            name: '-47e04673'
+            widget: string
+          - hint: >-
+              Original text: Manage customer cases, automate processes, and get
+              a unified view of customer data. Boost support with knowledge
+              bases, real-time chat, and social media., key: d10be21
+            label: Text
+            name: d10be21
+            widget: text
+          - hint: 'Original text: the basics, key: 327a2894'
+            label: Text
+            name: 327a2894
+            widget: string
+          - hint: 'Original text: 360, key: c62d'
+            label: Text
+            name: c62d
+            widget: string
+          - hint: 'Original text: Marketing Cloud, key: 6f15cf7b'
+            label: Text
+            name: 6f15cf7b
+            widget: string
+          - hint: 'Original text: DMS or, key: 786cdcd9'
+            label: Text
+            name: 786cdcd9
+            widget: string
+          - hint: 'Original text: Data Warehouse, key: -30bad233'
+            label: Text
+            name: '-30bad233'
+            widget: string
+          - hint: 'Original text: enterprise, key: -2fd8cc9f'
+            label: Text
+            name: '-2fd8cc9f'
+            widget: string
+          - hint: 'Original text: CRM, key: 105be'
+            label: Text
+            name: 105be
+            widget: string
+          - hint: 'Original text: Sales/, key: -6cd43b3d'
+            label: Text
+            name: '-6cd43b3d'
+            widget: string
+          - hint: 'Original text: DMS, key: 108ea'
+            label: Text
+            name: 108ea
+            widget: string
+          - hint: 'Original text: CUSTOMER DATA, key: 383ca2ac'
+            label: Text
+            name: 383ca2ac
+            widget: string
+          - hint: 'Original text: INVENTORY, key: 2da8293c'
+            label: Text
+            name: 2da8293c
+            widget: string
+          - hint: 'Original text: DESKING, key: -78650d77'
+            label: Text
+            name: '-78650d77'
+            widget: string
+          - hint: 'Original text: everything, key: 17efcab3'
+            label: Text
+            name: 17efcab3
+            widget: string
+          - hint: 'Original text: Transformation for , key: 22d12f0e'
+            label: Text
+            name: 22d12f0e
+            widget: string
+          - hint: 'Original text: Sales , key: -6cd43b4c'
+            label: Text
+            name: '-6cd43b4c'
+            widget: string
+          - hint: 'Original text: Service, key: -2683a16b'
+            label: Text
+            name: '-2683a16b'
+            widget: string
+          - hint: 'Original text: Marketing Automation, key: -102a006f'
+            label: Text
+            name: '-102a006f'
+            widget: string
+          - hint: 'Original text: Automotive Cloud, key: 6ce3d94a'
+            label: Text
+            name: 6ce3d94a
+            widget: string
+          - hint: 'Original text: Scheduler, key: 6ddde09b'
+            label: Text
+            name: 6ddde09b
+            widget: string
+          - hint: 'Original text: Einstein , key: 178a3fa1'
+            label: Text
+            name: 178a3fa1
+            widget: string
+          - hint: 'Original text: Engagement Tools/Chatbots, key: 6785fab9'
+            label: Text
+            name: 6785fab9
+            widget: string
+          - hint: 'Original text: Heroku, key: -7f5e4cfc'
+            label: Text
+            name: '-7f5e4cfc'
+            widget: string
+          - hint: 'Original text: APIs, key: 1ec1b9'
+            label: Text
+            name: 1ec1b9
+            widget: string
+          - hint: 'Original text: Request a Consultation, key: -5737f227'
+            label: Text
+            name: '-5737f227'
+            widget: string
+          - hint: 'Original text: Expert Salesforce Consultation, key: 1e92fd4'
+            label: Text
+            name: 1e92fd4
+            widget: string
+          - hint: 'Original text: Job Title, key: 61f97ff5'
+            label: Text
+            name: 61f97ff5
+            widget: string
+          - hint: 'Original text: Our Privacy Policy, key: -ab49382'
+            label: Text
+            name: '-ab49382'
+            widget: string
+          - hint: 'Original text: 5965 S 900 , key: 2c081d51'
+            label: Text
+            name: 2c081d51
+            widget: string
+          - hint: 'Original text: ESuite 275 , key: 5a9ccddd'
+            label: Text
+            name: 5a9ccddd
+            widget: string
+          - hint: 'Original text: Contact us, key: 7f274abe'
+            label: Text
+            name: 7f274abe
+            widget: string
+          - hint: 'Original text: saltclick headquarters, key: -4d11806b'
+            label: Text
+            name: '-4d11806b'
+            widget: string
+          - hint: >-
+              Original text: Please include verbiage re: cross channel, remote,
+              all time zones, real time data with connected work flows, key:
+              685cd7e4
+            label: Text
+            name: 685cd7e4
+            widget: text
+          - hint: 'Original text: inquiry, key: 749289c7'
+            label: Text
+            name: 749289c7
+            widget: string
+          - hint: >-
+              Original text: PLEASE INCLUDE ME IN MARKETING UPDATES, key:
+              6bea400f
+            label: Text
+            name: 6bea400f
+            widget: string
+          - hint: 'Original text: PRIVACY POLICY, key: 4d62acea'
+            label: Text
+            name: 4d62acea
+            widget: string
+          - hint: 'Original text: SUBMIT, key: -6d90cbe8'
+            label: Text
+            name: '-6d90cbe8'
+            widget: string
+          - hint: >-
+              Original text: See everything. Work as one from anywhere., key:
+              691ff408
+            label: Text
+            name: 691ff408
+            widget: string
+          - hint: >-
+              Original text: Salesforce is an infinite canvas. You can use it to
+              build anything you want. Our industry experts can help you tailor
+              it just right for your business. And we’ve got the track record to
+              prove it., key: 60fe0182
+            label: Text
+            name: 60fe0182
+            widget: text
+          - hint: 'Original text: rv DEALERSHIPS, key: 2ed0bf42'
+            label: Text
+            name: 2ed0bf42
+            widget: string
+          - hint: 'Original text: automotive, key: 15495ef5'
+            label: Text
+            name: 15495ef5
+            widget: string
+          - hint: 'Original text: Our Salesforce Service, key: -6f49598'
+            label: Text
+            name: '-6f49598'
+            widget: string
+          - hint: 'Original text: Advisory Service, key: 65d0e4e'
+            label: Text
+            name: 65d0e4e
+            widget: string
+          - hint: >-
+              Original text: Scope, setup, and launch Salesforce for your
+              business., key: -733a9c2
+            label: Text
+            name: '-733a9c2'
+            widget: string
+          - hint: >-
+              Original text: Reduce manual processes and enhance your tech
+              stack., key: -7c18cd3f
+            label: Text
+            name: '-7c18cd3f'
+            widget: string
+          - hint: >-
+              Original text: Bring DMS, inventory, email, and more into
+              Salesforce., key: -39d3813f
+            label: Text
+            name: '-39d3813f'
+            widget: string
+          - hint: >-
+              Original text: Get ongoing support and training for your teams.,
+              key: 69db88b1
+            label: Text
+            name: 69db88b1
+            widget: string
+          - hint: >-
+              Original text: Make Salesforce just right for your unique business
+              needs., key: 3170e56f
+            label: Text
+            name: 3170e56f
+            widget: string
+          - hint: >-
+              Original text: Customize a package for your budget, pace, and
+              business., key: -3ca6297b
+            label: Text
+            name: '-3ca6297b'
+            widget: string
+          - hint: 'Original text: How We Work, key: 5ca34d33'
+            label: Text
+            name: 5ca34d33
+            widget: string
+          - hint: 'Original text: who works with us, key: -26ca7748'
+            label: Text
+            name: '-26ca7748'
+            widget: string
+          - hint: 'Original text: What People are Saying, key: 5f369b58'
+            label: Text
+            name: 5f369b58
+            widget: string
+          - hint: >-
+              Original text: Grow your dealership with industry-specific
+              solutions and expertise tailored to you. Move from handwritten
+              notes and files. Eliminate complex spreadsheets. Save hours of
+              work with a crystal-clear view of your customers, inventory, and
+              sales performance—all in one place. , key: -7f8f7fda
+            label: Text
+            name: '-7f8f7fda'
+            widget: text
+          - hint: >-
+              Original text: Our team of experts know Salesforce and your
+              industry inside and out. Learn how we can work together to grow
+              your business and make it easier to run., key: -651abf53
+            label: Text
+            name: '-651abf53'
+            widget: text
+          - hint: 'Original text: RV Dealerships, key: 5cccf42'
+            label: Text
+            name: 5cccf42
+            widget: string
+          - hint: >-
+              Original text: We help RV dealerships grow and simplify how they
+              run with Salesforce , key: -54777a2e
+            label: Text
+            name: '-54777a2e'
+            widget: string
+          - hint: >-
+              Original text: Our friendly and knowledgeable team has real-world
+              RV experience, but we're not just about words— we roll up our
+              sleeves and get hands-ons, so you're not just on Salesforce, but
+              using it to its full potential., key: 29d01aff
+            label: Text
+            name: 29d01aff
+            widget: text
+          - hint: 'Original text: more information, key: 1b3f04e1'
+            label: Text
+            name: 1b3f04e1
+            widget: string
+          - hint: >-
+              Original text: Customer-centricity is at the core of everything
+              you do. But there’s a catch—delivering personalized experiences
+              requires the right technology and thinking. At SaltClick, we
+              bridge that gap for car dealerships, bringing clarity to data and
+              insight into customer journeys with Salesforce., key: 547e0059
+            label: Text
+            name: '547e0059'
+            widget: text
+          - hint: 'Original text: Marine Dealership, key: 47cddcf3'
+            label: Text
+            name: 47cddcf3
+            widget: string
+          - hint: >-
+              Original text: Salesforce customized by SaltClick is like giving
+              every member of your team a super-smart and incredibly organized
+              assistant. It effortlessly tracks the whereabouts of every boat,
+              stores customer details, and even assists your sales reps close
+              deals at lightning speed., key: -2bb772d1
+            label: Text
+            name: '-2bb772d1'
+            widget: text
+          - hint: 'Original text: FAQs, key: 20d03d'
+            label: Text
+            name: 20d03d
+            widget: string
+          - hint: 'Original text: Password, key: 4c641ebb'
+            label: Text
+            name: 4c641ebb
+            widget: string
+          - hint: 'Original text: Don''t have an account?, key: 7c95c01d'
+            label: Text
+            name: 7c95c01d
+            widget: string
+          - hint: 'Original text: Sign Up, key: -204ff822'
+            label: Text
+            name: '-204ff822'
+            widget: string
+          - hint: >-
+              Original text: We're having trouble logging you in. Please try
+              again, or contact us if you continue to have problems., key:
+              -4ccc12f5
+            label: Text
+            name: '-4ccc12f5'
+            widget: text
+          - hint: >-
+              Original text: See More, Sell More, and Do More with Salesforce
+              for Marine Dealerships, key: -1029a622
+            label: Text
+            name: '-1029a622'
+            widget: string
+          - hint: >-
+              Original text: Salesforce Tailored by SaltClick for Marine
+              Dealerships, key: -7e4d9b7f
+            label: Text
+            name: '-7e4d9b7f'
+            widget: string
+          - hint: "Original text: Get the big picture and the small details\_, key: 544cccca"
+            label: Text
+            name: 544cccca
+            widget: string
+          - hint: >-
+              Original text: We help you choose a Salesforce option that works
+              for you, pay for only what you need, and get set up quickly. You
+              can chat with our Salesforce implementation and automotive experts
+              anytime., key: 4ec4eb27
+            label: Text
+            name: 4ec4eb27
+            widget: text
+          - hint: 'Original text: Named Automotive Launch Partner, key: 5df8ab7f'
+            label: Text
+            name: 5df8ab7f
+            widget: string
+          - hint: 'Original text: 10+, key: bdec'
+            label: Text
+            name: bdec
+            widget: string
+          - hint: >-
+              Original text: Years of Salesforce Automotive Experience, key:
+              -4a673aad
+            label: Text
+            name: '-4a673aad'
+            widget: string
+          - hint: 'Original text: projects completed successfully, key: 2cfc4bc2'
+            label: Text
+            name: 2cfc4bc2
+            widget: string
+          - hint: 'Original text: on Salesforce AppExchange, key: -2df2627c'
+            label: Text
+            name: '-2df2627c'
+            widget: string
+          - hint: 'Original text: Salesforce for marine dealerships, key: 49df5e58'
+            label: Text
+            name: 49df5e58
+            widget: string
+          - hint: 'Original text: A clear line of sight, key: 2ea761ce'
+            label: Text
+            name: 2ea761ce
+            widget: string
+          - hint: >-
+              Original text: Track inventory, store customer details, and drive
+              opportunities in one central place. Engage prospects and win more
+              with Salesforce., key: 512ca010
+            label: Text
+            name: 512ca010
+            widget: text
+          - hint: 'Original text: One easy-to-manage platform, key: -223442b3'
+            label: Text
+            name: '-223442b3'
+            widget: string
+          - hint: >-
+              Original text:  Say goodbye to chasing paper, limited insights,
+              and customer confusion and hello to more flexibility and freedom.,
+              key: -62768827
+            label: Text
+            name: '-62768827'
+            widget: text
+          - hint: 'Original text: Personalized marketing, key: -5cd2520a'
+            label: Text
+            name: '-5cd2520a'
+            widget: string
+          - hint: 'Original text: Streamlined , key: -21726d30'
+            label: Text
+            name: '-21726d30'
+            widget: string
+          - hint: 'Original text: sales, key: 682490c'
+            label: Text
+            name: 682490c
+            widget: string
+          - hint: 'Original text: Accurate forecasting, key: -7b18eb05'
+            label: Text
+            name: '-7b18eb05'
+            widget: string
+          - hint: 'Original text: Account manageemnt, key: -4f46b0ba'
+            label: Text
+            name: '-4f46b0ba'
+            widget: string
+          - hint: 'Original text: Quotes and contracts, key: -df0d431'
+            label: Text
+            name: '-df0d431'
+            widget: string
+          - hint: 'Original text: Simple. Agile. Brilliant. , key: 3262167f'
+            label: Text
+            name: 3262167f
+            widget: string
+          - hint: 'Original text: Insights at the speed of business, key: 1198a3f9'
+            label: Text
+            name: 1198a3f9
+            widget: string
+          - hint: 'Original text: Account management, key: -4f432bca'
+            label: Text
+            name: '-4f432bca'
+            widget: string
+          - hint: >-
+              Original text: Create detailed profiles for each customer. Use
+              Salesforce to capture information like boat preferences, budget,
+              purchase history, and service requests. And use the insights at
+              your fingertips to build stronger customer relationships. , key:
+              -16e27d5d
+            label: Text
+            name: '-16e27d5d'
+            widget: text
+          - hint: >-
+              Original text: See more information at a glance. Salesforce gives
+              you a big picture view of sales and customer details on your
+              computer or on the go. , key: -1d7775ce
+            label: Text
+            name: '-1d7775ce'
+            widget: text
+          - hint: >-
+              Original text: Salesforce integrates with business tools like
+              dealer management systems, finance systems for loan processing,
+              and third-party boat listing websites. , key: 4d7185c0
+            label: Text
+            name: 4d7185c0
+            widget: text
+          - hint: 'Original text: Intelligently tailored, key: 3c5df88e'
+            label: Text
+            name: 3c5df88e
+            widget: string
+          - hint: 'Original text: A higher level of control, key: 31b28182'
+            label: Text
+            name: 31b28182
+            widget: string
+          - hint: >-
+              Original text: Connect your inventory system to Salesforce to
+              track available boats, models, features, pricing, and more.
+              Salesforce delivers detail and makes it easier to match customers
+              with what's available. This enables superior customer services,
+              smarter sales strategies, and more informed purchasing—so your
+              dealership shines and your sales reps are never in the dark. ,
+              key: -48fd3df1
+            label: Text
+            name: '-48fd3df1'
+            widget: text
+          - hint: "Original text: Access real-time customer details in Salesforce. Everything is easy to search and understand, so you can multitask like a pro at your desk or on the go.\_\_, key: 24571da7"
+            label: Text
+            name: 24571da7
+            widget: text
+          - hint: >-
+              Original text: With built-in automation, you can put routine tasks
+              on autopilot and free up your sales reps to do what they do best:
+              close deals and build lasting customer relationships. , key:
+              -465b78a0
+            label: Text
+            name: '-465b78a0'
+            widget: text
+          - hint: >-
+              Original text: FlexFleet, a powerhouse in the commercial truck
+              rental industry was looking for a Salesforce partner that was more
+              than just a development consultant—they wanted a strategic guide
+              who couple orchestrate the perfect balance of platform
+              standardization, process optimization, and a deep understanding of
+              the Salesforce ecosystem., key: -4de91646
+            label: Text
+            name: '-4de91646'
+            widget: text
+          - hint: 'Original text: Improved driver safety, key: -30c45f4a'
+            label: Text
+            name: '-30c45f4a'
+            widget: string
+          - hint: 'Original text: reduction in daily , key: 42cabf15'
+            label: Text
+            name: 42cabf15
+            widget: string
+          - hint: 'Original text: speeding alerts, key: 7645c41c'
+            label: Text
+            name: 7645c41c
+            widget: string
+          - hint: 'Original text: (April 2022 to April 2023), key: 3c717a2b'
+            label: Text
+            name: 3c717a2b
+            widget: string
+          - hint: 'Original text: 31%, key: c587'
+            label: Text
+            name: c587
+            widget: string
+          - hint: 'Original text: reduction in average, key: -6485be11'
+            label: Text
+            name: '-6485be11'
+            widget: string
+          - hint: 'Original text: damage bills, key: -7c2092a5'
+            label: Text
+            name: '-7c2092a5'
+            widget: string
+          - hint: 'Original text: (2022 to 2023), key: -1f931121'
+            label: Text
+            name: '-1f931121'
+            widget: string
+          - hint: 'Original text: Increased Customer Engagement, key: -5b6ca11d'
+            label: Text
+            name: '-5b6ca11d'
+            widget: string
+          - hint: 'Original text: 22%, key: c1e5'
+            label: Text
+            name: c1e5
+            widget: string
+          - hint: 'Original text: surge in monthly , key: -3948f3a4'
+            label: Text
+            name: '-3948f3a4'
+            widget: string
+          - hint: 'Original text: customer logins , key: a1824f4'
+            label: Text
+            name: a1824f4
+            widget: string
+          - hint: 'Original text: 20%, key: c1a7'
+            label: Text
+            name: c1a7
+            widget: string
+          - hint: 'Original text: higher adoption , key: -64c26c49'
+            label: Text
+            name: '-64c26c49'
+            widget: string
+          - hint: 'Original text: rate of Driver , key: 22bb26cf'
+            label: Text
+            name: 22bb26cf
+            widget: string
+          - hint: 'Original text: Management feature, key: -6fcca7c7'
+            label: Text
+            name: '-6fcca7c7'
+            widget: string
+          - hint: 'Original text: Customer success, key: 5429e1e1'
+            label: Text
+            name: 5429e1e1
+            widget: string
+          - hint: >-
+              Original text: Flex Fleet Rental is a commercial truck rental
+              company that wanted to gain full visibility into their business,
+              inventory, and customers to drive sales and improve driver safety.
+              , key: 2bb69dd1
+            label: Text
+            name: 2bb69dd1
+            widget: text
+          - hint: 'Original text: Inventory management , key: -688884a7'
+            label: Text
+            name: '-688884a7'
+            widget: string
+          - hint: 'Original text: reduced costs , key: -6c3ae2c4'
+            label: Text
+            name: '-6c3ae2c4'
+            widget: string
+          - hint: >-
+              Original text: A single view of customers across sales and
+              service., key: -625ec17b
+            label: Text
+            name: '-625ec17b'
+            widget: string
+          - hint: >-
+              Original text: Seamless insights into sales, marketing, and sales
+              performance with easy-to-read reports., key: -43731b1d
+            label: Text
+            name: '-43731b1d'
+            widget: string
+          - hint: >-
+              Original text: Enhanced communication and customer insights create
+              a smoother, more personalized car-buying experience., key:
+              -4dc26c30
+            label: Text
+            name: '-4dc26c30'
+            widget: text
+          - hint: >-
+              Original text: "We expect this upward growth trajectory to
+              continue, and that's precisely why we focused on setting the right
+              foundation… Our engagement with SaltClick has been instrumental in
+              our growth. The value created by their work has been immense. I
+              have nothing but positive things to say about our collaboration.",
+              key: -2dd94cc4
+            label: Text
+            name: '-2dd94cc4'
+            widget: text
+          - hint: >-
+              Original text: -Parker Spendlove, CTO at FlexFleet Rental, key:
+              -162b186e
+            label: Text
+            name: '-162b186e'
+            widget: string
+          - hint: 'Original text: Password Reset Email Sent, key: 6bfe9c32'
+            label: Text
+            name: 6bfe9c32
+            widget: string
+          - hint: >-
+              Original text: If we found an account associated with that email
+              address, we've sent a link to reset your password., key: -13a89bf
+            label: Text
+            name: '-13a89bf'
+            widget: text
+          - hint: 'Original text: Reset Password, key: 2bfd368c'
+            label: Text
+            name: 2bfd368c
+            widget: string
+          - hint: >-
+              Original text: There was an error resetting your password. Please
+              try again, or contact us if you continue to have problems., key:
+              -7c28e64b
+            label: Text
+            name: '-7c28e64b'
+            widget: text
+          - hint: 'Original text: RV Dealership, key: 5b069b51'
+            label: Text
+            name: 5b069b51
+            widget: string
+          - hint: >-
+              Original text: Run Smoother, Smarter, and More Profitably. That's
+              the Promise of SaltClick solutions., key: -47463c96
+            label: Text
+            name: '-47463c96'
+            widget: string
+          - hint: >-
+              Original text: We're your partners when you need to get started
+              with Salesforce Solutions., key: -2883d276
+            label: Text
+            name: '-2883d276'
+            widget: string
+          - hint: 'Original text: Clear View, key: 479eacd8'
+            label: Text
+            name: 479eacd8
+            widget: string
+          - hint: >-
+              Original text: With our help, no more lost papers or confused
+              customers. You’ll have a clear view of it all, and your team can
+              get more done without mix-ups. So say goodbye to the old, and
+              hello to a smooth-running RV dealership., key: 77cd5a95
+            label: Text
+            name: 77cd5a95
+            widget: text
+          - hint: 'Original text: Solutions, key: 3c2e81fa'
+            label: Text
+            name: 3c2e81fa
+            widget: string
+          - hint: >-
+              Original text: Digital transformation means making your dealership
+              better for today's online shoppers. You don't have to do it all at
+              once. We can help you take it step by step., key: -379806d
+            label: Text
+            name: '-379806d'
+            widget: text
+          - hint: 'Original text: Telematics data integration, key: 8db4b5b'
+            label: Text
+            name: 8db4b5b
+            widget: string
+          - hint: 'Original text: Salesforce Experience Cloud, key: -2028ef80'
+            label: Text
+            name: '-2028ef80'
+            widget: string
+          - hint: 'Original text: Salesforce Customer 360, key: -377fe7f4'
+            label: Text
+            name: '-377fe7f4'
+            widget: string
+          - hint: 'Original text: Salesforce Sales Cloud, key: 484044c0'
+            label: Text
+            name: 484044c0
+            widget: string
+          - hint: 'Original text: Salesforce Service Cloud, key: -a049417'
+            label: Text
+            name: '-a049417'
+            widget: string
+          - hint: 'Original text: improved driver safety, key: -600d0b6a'
+            label: Text
+            name: '-600d0b6a'
+            widget: string
+          - hint: >-
+              Original text: reduction in average damage bills (2022 to 2023),
+              key: -425cf66d
+            label: Text
+            name: '-425cf66d'
+            widget: string
+          - hint: 'Original text: 7.5%, key: 19b3a7'
+            label: Text
+            name: 19b3a7
+            widget: string
+          - hint: >-
+              Original text: reduction in daily speeding alerts (April 2022 to
+              April 2023), key: 53fa3184
+            label: Text
+            name: 53fa3184
+            widget: string
+          - hint: 'Original text: increased customer engagement, key: d0a4b03'
+            label: Text
+            name: d0a4b03
+            widget: string
+          - hint: >-
+              Original text: surge in monthly customer logins (April 2022 to
+              April 2023), key: 46d46f7b
+            label: Text
+            name: 46d46f7b
+            widget: string
+          - hint: >-
+              Original text: higher adoption rate of Driver Management feature,
+              key: -5ed3f78f
+            label: Text
+            name: '-5ed3f78f'
+            widget: string
+          - hint: 'Original text: drive cost efficiency, key: 3372be06'
+            label: Text
+            name: 3372be06
+            widget: string
+          - hint: >-
+              Original text: Streamlined technology systems to maintain a
+              cost-effective business model and support growth without
+              significant hiring., key: 7614a306
+            label: Text
+            name: 7614a306
+            widget: text
+          - hint: >-
+              Original text: From the initial consultation to the final
+              implementation and support, SaltClick demonstrated exceptional
+              professionalism, expertise, and attention to detail. They
+              efficiently migrated our data, streamlined our sales workflows,
+              and provided comprehensive training to our team, ensuring a smooth
+              transition and minimal disruption to our operations. The impact of
+              their Salesforce implementation has been a game-changer. , key:
+              6fd2ef05
+            label: Text
+            name: 6fd2ef05
+            widget: text
+          - hint: >-
+              Original text: Our sales team now enjoys a unified and streamlined
+              system that enables them to effectively manage leads, track
+              customer interactions, and close deals with greater efficiency. ,
+              key: -2741bc23
+            label: Text
+            name: '-2741bc23'
+            widget: text
+          - hint: >-
+              Original text: The improved reporting and analytics capabilities
+              have empowered our management team to make data-driven decisions
+              and gain valuable insights into our business performance.” , key:
+              -243c501d
+            label: Text
+            name: '-243c501d'
+            widget: text
+          - hint: >-
+              Original text: ~Parker Spendlove, CTO at FlexFleet Rental, key:
+              40dab661
+            label: Text
+            name: 40dab661
+            widget: string
+          - hint: 'Original text: Salesforce for RV dealerships, key: -1badc26'
+            label: Text
+            name: '-1badc26'
+            widget: string
+          - hint: >-
+              Original text: No more chasing paper or lost details. Get a
+              whole-picture view of your business and run smoother, smarter, and
+              more profitably with Salesforce., key: 30acb61c
+            label: Text
+            name: 30acb61c
+            widget: text
+          - hint: 'Original text: A powerful way forward, key: 30143f4b'
+            label: Text
+            name: 30143f4b
+            widget: string
+          - hint: >-
+              Original text: Salesforce brings the latest and most advanced
+              features to RV dealerships, delivering exceptional levels of
+              efficiency, insight, and performance. , key: -67dd9723
+            label: Text
+            name: '-67dd9723'
+            widget: text
+          - hint: 'Original text: 360 customer views, key: -309b6e01'
+            label: Text
+            name: '-309b6e01'
+            widget: string
+          - hint: 'Original text: Insights at your fingertips , key: 3146ce5a'
+            label: Text
+            name: 3146ce5a
+            widget: string
+          - hint: >-
+              Original text: Keep track of your business from anywhere, key:
+              -3b8d1d5b
+            label: Text
+            name: '-3b8d1d5b'
+            widget: string
+          - hint: >-
+              Original text: Take the guesswork out of account management. Key
+              details like name, account number, and industry give you an
+              enhanced level of information and insight. With related records,
+              tie contacts, opportunities, and activities together for a full
+              view of an account. And create tasks like meetings and account
+              follow-ups at your desk or on the move., key: -7efeb667
+            label: Text
+            name: '-7efeb667'
+            widget: text
+          - hint: >-
+              Original text: See more information at a glance. From any
+              Salesforce screen. Use built-in search to find anything. Get
+              relevant and timely insights and keep track of your accounts,
+              sales activity, and pipeline from your computer or phone. , key:
+              -332802b9
+            label: Text
+            name: '-332802b9'
+            widget: text
+          - hint: >-
+              Original text: Salesforce easily connects with dealer management
+              systems, service appointment scheduling, digital retailing,
+              marketing, and other tools via APIs. Need a custom connection? Our
+              team can do it all. , key: 4bb4c4b6
+            label: Text
+            name: 4bb4c4b6
+            widget: text
+          - hint: >-
+              Original text: Giant RV is a four-rooftop RV dealership in
+              California. CDK was about to sunset the system they used to track
+              inventory and sales. They didn't want to compromise on features,
+              so they opted for Salesforce. The challenge: moving to Salesforce
+              in less than 30 days instead of the typical 3-6 months. That's
+              when CDK recommended seasoned automotive experts SaltClick., key:
+              -25458bcc
+            label: Text
+            name: '-25458bcc'
+            widget: text
+          - hint: 'Original text: Analytics, key: 1288bb66'
+            label: Text
+            name: 1288bb66
+            widget: string
+          - hint: 'Original text: Dashboards & Reporting, key: 2d16bc73'
+            label: Text
+            name: 2d16bc73
+            widget: string
+          - hint: 'Original text: Sales Onboarding, key: 1b2885ef'
+            label: Text
+            name: 1b2885ef
+            widget: string
+          - hint: >-
+              Original text: Enabled Giant RV to be more proactive with quick
+              snapshots into sales activity., key: 67f392ab
+            label: Text
+            name: 67f392ab
+            widget: string
+          - hint: >-
+              Original text: Made it easier to onboard salespeople and reduced
+              training time. , key: -197314d2
+            label: Text
+            name: '-197314d2'
+            widget: string
+          - hint: >-
+              Original text: Easy-to-use system boosted productivity, minimizing
+              keystrokes and double entry., key: -63a6bc52
+            label: Text
+            name: '-63a6bc52'
+            widget: string
+          - hint: >-
+              Original text: "There are always going to be pitfalls and traps in
+              every implementation you do with an alien computer system. So
+              having people who have been through it before, are used to dealing
+              with the difficulties, and know how to focus or where to get the
+              answers was a very big thing. SaltClick helped save our Salesforce
+              implementation.", key: -596602a8
+            label: Text
+            name: '-596602a8'
+            widget: text
+          - hint: >-
+              Original text: -Mike Jacque, Corporate General Manager at Giant
+              RV, key: -5275ac60
+            label: Text
+            name: '-5275ac60'
+            widget: string
+          - hint: >-
+              Original text: Let us be your trusted trail guide throughout your
+              Salesforce journey. , key: 2f4e99bb
+            label: Text
+            name: 2f4e99bb
+            widget: string
+          - hint: 'Original text: Account activated, key: -3d3c5c82'
+            label: Text
+            name: '-3d3c5c82'
+            widget: string
+          - hint: >-
+              Original text: Your account was created successfully. You will be
+              redirected shortly., key: -7498bb4e
+            label: Text
+            name: '-7498bb4e'
+            widget: string
+          - hint: 'Original text: If nothing happens, click here., key: -7bf1dbc9'
+            label: Text
+            name: '-7bf1dbc9'
+            widget: string
+          - hint: 'Original text: Name, key: 24eeab'
+            label: Text
+            name: 24eeab
+            widget: string
+          - hint: >-
+              Original text: By creating an account, I agree to this website's ,
+              key: 4867e34d
+            label: Text
+            name: 4867e34d
+            widget: string
+          - hint: 'Original text: privacy policy, key: 329660ca'
+            label: Text
+            name: 329660ca
+            widget: string
+          - hint: 'Original text:  and , key: 1f0b149'
+            label: Text
+            name: 1f0b149
+            widget: string
+          - hint: 'Original text: terms of service, key: 4f204da5'
+            label: Text
+            name: 4f204da5
+            widget: string
+          - hint: >-
+              Original text: I consent to receive marketing emails., key:
+              -3db302e8
+            label: Text
+            name: '-3db302e8'
+            widget: string
+          - hint: 'Original text: Already have an account?, key: -76cf8d8b'
+            label: Text
+            name: '-76cf8d8b'
+            widget: string
+          - hint: 'Original text: Log In, key: -78042c3f'
+            label: Text
+            name: '-78042c3f'
+            widget: string
+          - hint: >-
+              Original text: There was an error signing you up. Please try
+              again, or contact us if you continue to have problems., key:
+              -191558ad
+            label: Text
+            name: '-191558ad'
+            widget: text
+          - hint: 'Original text: Verification Required, key: 8449804'
+            label: Text
+            name: '8449804'
+            widget: string
+          - hint: >-
+              Original text: Account verification required. Please check your
+              email to find your unique verification link., key: 66134559
+            label: Text
+            name: '66134559'
+            widget: text
+          - hint: 'Original text: What’s a Rich Text element?, key: -3c0dda4d'
+            label: Text
+            name: '-3c0dda4d'
+            widget: string
+          - hint: >-
+              Original text: The rich text element allows you to create and
+              format headings, paragraphs, blockquotes, images, and video all in
+              one place instead of having to add and format them individually.
+              Just double-click and easily create content., key: 2e633c6a
+            label: Text
+            name: 2e633c6a
+            widget: text
+          - hint: 'Original text: Static and dynamic content editing, key: 57fa6135'
+            label: Text
+            name: 57fa6135
+            widget: string
+          - hint: >-
+              Original text: A rich text element can be used with static or
+              dynamic content. For static content, just drop it into any page
+              and begin editing. For dynamic content, add a rich text field to
+              any collection and then connect a rich text element to that field
+              in the settings panel. Voila!, key: -a016b40
+            label: Text
+            name: '-a016b40'
+            widget: text
+          - hint: >-
+              Original text: How to customize formatting for each rich text,
+              key: -4bffb26e
+            label: Text
+            name: '-4bffb26e'
+            widget: string
+          - hint: >-
+              Original text: Headings, paragraphs, blockquotes, figures, images,
+              and figure captions can all be styled after a class is added to
+              the rich text element using the "When inside of" nested selector
+              system., key: -43ba1153
+            label: Text
+            name: '-43ba1153'
+            widget: text
+          - hint: 'Original text: Heading 1 5REM 125%, key: -4f6a32e1'
+            label: Text
+            name: '-4f6a32e1'
+            widget: string
+          - hint: 'Original text: Heading 2 4REM 125%, key: -4ec9ef21'
+            label: Text
+            name: '-4ec9ef21'
+            widget: string
+          - hint: 'Original text: Heading 3 3REM 125%, key: -4e29ab61'
+            label: Text
+            name: '-4e29ab61'
+            widget: string
+          - hint: 'Original text: Heading 4 2REM 125%, key: -4d8967a1'
+            label: Text
+            name: '-4d8967a1'
+            widget: string
+          - hint: 'Original text: Heading 5 1REM 125%, key: -4ce923e1'
+            label: Text
+            name: '-4ce923e1'
+            widget: string
+          - hint: 'Original text: Heading 6 .8REM 125%, key: -4941d837'
+            label: Text
+            name: '-4941d837'
+            widget: string
+          - hint: 'Original text: Heading, key: -6d5fea1e'
+            label: Text
+            name: '-6d5fea1e'
+            widget: string
+          - hint: 'Original text: Password updated, key: -16704faa'
+            label: Text
+            name: '-16704faa'
+            widget: string
+          - hint: >-
+              Original text: Your password was updated successfully. You were
+              automatically logged in and can continue your session., key:
+              5284c470
+            label: Text
+            name: 5284c470
+            widget: text
+          - hint: 'Original text: Go to Homepage, key: -27857705'
+            label: Text
+            name: '-27857705'
+            widget: string
+          - hint: 'Original text: Update Password, key: 69ed5012'
+            label: Text
+            name: 69ed5012
+            widget: string
+          - hint: >-
+              Original text: Please enter your new password in the field below.
+              Make sure you are not using your current password., key: -2d35ed29
+            label: Text
+            name: '-2d35ed29'
+            widget: text
+          - hint: 'Original text: New Password, key: 79707d5b'
+            label: Text
+            name: 79707d5b
+            widget: string
+          - hint: >-
+              Original text: There was an error updating your password. Please
+              try again, or contact us if you continue to have problems., key:
+              -2da7dae4
+            label: Text
+            name: '-2da7dae4'
+            widget: text
+          - hint: 'Original text: My Account, key: -585ec447'
+            label: Text
+            name: '-585ec447'
+            widget: string
+          - hint: 'Original text: Password settings, key: 4f13dfe8'
+            label: Text
+            name: 4f13dfe8
+            widget: string
+          - hint: 'Original text: Reset password, key: 2822d26c'
+            label: Text
+            name: 2822d26c
+            widget: string
+          - hint: >-
+              Original text: Your account was updated successfully., key:
+              6d17ba0b
+            label: Text
+            name: 6d17ba0b
+            widget: string
+          - hint: >-
+              Original text: There was an error updating your account. Please
+              try again, or contact us if you continue to have problems., key:
+              13527f80
+            label: Text
+            name: 13527f80
+            widget: text
+      - label: Links
+        name: links
+        file: cms/_data/links.json
+        fields:
+          - label: Title
+            name: title
+            widget: hidden
+            default: Links
+          - hint: 'Original link: /, key: 2f'
+            label: Link
+            name: 2f
+            widget: string
+          - hint: 'Original link: /about/, key: 61642f31'
+            label: Link
+            name: 61642f31
+            widget: string
+          - hint: 'Original link: /contact/, key: 16bdc13e'
+            label: Link
+            name: 16bdc13e
+            widget: string
+          - hint: 'Original link: #, key: 23'
+            label: Link
+            name: '23'
+            widget: string
+          - hint: 'Original link: /industry/rv-services/, key: -78166cf6'
+            label: Link
+            name: '-78166cf6'
+            widget: string
+          - hint: 'Original link: /industry/auto-services/, key: 4f3b7035'
+            label: Link
+            name: 4f3b7035
+            widget: string
+          - hint: 'Original link: /industry/marine-services/, key: -546c63f8'
+            label: Link
+            name: '-546c63f8'
+            widget: string
+          - hint: 'Original link: /industry/, key: -3b90413e'
+            label: Link
+            name: '-3b90413e'
+            widget: string
+          - hint: 'Original link: mailto:info@saltclick.com, key: 63434a7b'
+            label: Link
+            name: 63434a7b
+            widget: string
+          - hint: 'Original link: /privacy-policy/, key: -2f934417'
+            label: Link
+            name: '-2f934417'
+            widget: string
+          - hint: 'Original link: https://www.instagram.com/saltclick/, key: 5b992d4d'
+            label: Link
+            name: 5b992d4d
+            widget: string
+          - hint: >-
+              Original link:
+              https://www.youtube.com/channel/UCS6qKlRlt6Uw68TEwPQ6PKg, key:
+              5a86a747
+            label: Link
+            name: 5a86a747
+            widget: string
+          - hint: >-
+              Original link: mailto:yervand.yezeryan@saltclick.com, key:
+              24383bbf
+            label: Link
+            name: 24383bbf
+            widget: string
+          - hint: >-
+              Original link: https://www.linkedin.com/in/yezeryan/, key:
+              -6b77748e
+            label: Link
+            name: '-6b77748e'
+            widget: string
+          - hint: 'Original link: mailto:nick.petricca@saltclick.com, key: 6007eb93'
+            label: Link
+            name: 6007eb93
+            widget: string
+          - hint: >-
+              Original link: http://linkedin.com/in/nick-petricca-b2b72a12, key:
+              -41a49d5
+            label: Link
+            name: '-41a49d5'
+            widget: string
+          - hint: 'Original link: mailto:curtis.willis@saltclick.com, key: -32cf67b7'
+            label: Link
+            name: '-32cf67b7'
+            widget: string
+          - hint: 'Original link: /sign-up/, key: 4b0d5213'
+            label: Link
+            name: 4b0d5213
+            widget: string
+          - hint: 'Original link: /log-in/, key: 26a3aa92'
+            label: Link
+            name: 26a3aa92
+            widget: string
+          - hint: >-
+              Original link: https://webflow.com/templates/designers/obencci,
+              key: -6a8a559
+            label: Link
+            name: '-6a8a559'
+            widget: string
+          - hint: 'Original link: tel:801997-6226, key: 3b2c9f50'
+            label: Link
+            name: 3b2c9f50
+            widget: string
+          - hint: 'Original link: #chinatown, key: 63ac53a6'
+            label: Link
+            name: 63ac53a6
+            widget: string
+          - hint: 'Original link: /reset-password/, key: -16d8c219'
+            label: Link
+            name: '-16d8c219'
+            widget: string
+      - label: Images
+        name: images
+        file: cms/_data/images.json
+        fields:
+          - label: Title
+            name: title
+            widget: hidden
+            default: Images
+          - label: Image
+            name: 4e6f544
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: i237bb54a
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 76e1c3c2
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: e6f34a4
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: i3204a17a
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: i44da13b8
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+publish_mode: editorial_workflow
